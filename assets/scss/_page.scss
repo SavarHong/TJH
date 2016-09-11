@@ -1,0 +1,102 @@
+@charset "utf-8";
+// page 组件
+
+
+/* Page 的样式  */
+.page-wrap{
+    width: 100%;
+    height: 100%;
+    font-family: $body-font-family;
+    background: #f5f5f5;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.page{
+    @include box-sizing(border-box);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.content{
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+}
+
+.bar ~ .content{
+    top: rem-calc(88);
+}
+
+/* 顶部导航 */
+.bar{
+    background: #fff;
+    width: 100%;
+    height: rem-calc(88);
+    border-bottom: rem-calc(2) solid #e5e5e5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    h1{
+        font-size: rem-calc(30);
+        font-weight: normal;
+        position: absolute;
+        display: block;
+        width: 100%;
+        line-height: rem-calc(86);
+        text-align: center;
+        white-space: nowrap;
+    }
+    .bar-center{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        .bar-input{
+            width: rem-calc(400);
+            height: rem-calc(60);
+            margin: rem-calc(14) auto 0;
+        }
+        input{
+            width: 100%;
+            height: 100%;
+            border: 0;
+            background-color: #f3f5f7;
+            border-radius: rem-calc(30);
+            padding: rem-calc(10 30 10 55);
+        }
+    }
+    .bar-menu{
+        display: inline-block;
+        vertical-align: middle;
+        font-size: rem-calc(28);
+        line-height: rem-calc(86);
+        color: $body-font-color;
+        position: relative;
+        z-index: 20;
+        i{
+            font-size: rem-calc(24);
+            vertical-align: middle;
+            margin-right: rem-calc(4);
+        }
+        span{
+            vertical-align: middle;
+        }
+        &.menu-left{
+            float: left;
+            padding-left: rem-calc(14);
+        }
+        &.menu-right{
+            float: right;
+            padding-right: rem-calc(14);
+        }
+    }
+}

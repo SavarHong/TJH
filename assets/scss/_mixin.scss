@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+// 全局的Mixins和函数
+
+//盒子模型
+@mixin flexbox(){
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin box(){
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+}
+@mixin box-v-c(){
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+}
+
+//浏览器兼容
+@mixin compatible($attri,$value){
+  @each $nav in $class-browser-nav{
+	#{$nav}#{$attri}:#{$value};
+  }
+}
+
+@mixin box-sizing($type:border-box) {
+  @include compatible(box-sizing,$type);
+}
+@mixin clearfix(){
+  &:before,
+  &:after {
+	content: " ";
+	display: table;
+  }
+  &:after {
+	clear: both;
+  }
+}
+
+//按钮
+//有背景色的button
+@mixin bg-btn($width, $height, $color, $fontsize) {
+  display: block;
+  height: $height;
+  width: $width;
+  font-size: $fontsize;
+  background-color: $color;
+  border-radius: rem-calc(8);
+  text-align: center;
+  line-height: $height;
+  color: #ffffff;
+  white-space: nowrap;
+  &:active {
+	color:$color;
+	background-color: #ffffff;
+	border: 1px solid $color;
+  }
+}
+
+@mixin bg-btn-color($color){
+  background-color: $color;
+  &:active{
+	color: $color;
+	background-color: #fff;
+	border-color: $color;
+  }
+}
+
+//只有边框的button
+@mixin border-btn($width, $height, $color, $fontsize) {
+  display: block;
+  height: $height;
+  width: $width;
+  font-size: $fontsize;
+  border: 1px solid $color;
+  border-radius: rem-calc(8);
+  text-align: center;
+  line-height: $height;
+  color: $color;
+  white-space: nowrap;
+  &:active,
+  &:focus {
+	color: #fff;
+	background-color: $color;
+	border: 1px solid $color;
+  }
+}
+
+@mixin border-btn-color($color){
+  border-color: $color;
+  color: $color;
+  &:active,
+  &:focus{
+	color: #fff;
+	background-color: $color;
+	border: 1px solid $color;
+  }
+}

@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+//
+// 配置文件
+//
+
+// 全局设定
+$base-font-size: 16 !default;
+$body-bg: #f3f5f7 !default;
+$body-font-color: #666 !default;
+$body-font-family: STHeiTi,"Microsoft YaHei",Helvetica,"Helvetica Neue", sans-serif !default;
+$body-font-weight: normal !default;
+$body-font-style: normal !default;
+
+// 字体
+$class-font-account:20;
+$class-font:2;
+
+// 主色
+$color-primary: #06cc93;
+$color-danger: #ff000c;
+$color-warning: #ffa500;
+$color-success: #48dc6b;
+
+$color-primary-acitve: #0bb57e;
+
+$color-title: #333;
+$color-text-gray: #999;
+$color-link: $color-primary;
+$color-link-active: $color-primary-acitve;
+
+// Bars
+
+$bar-base-height: 86;
+
+// 按钮
+
+$button-font-size: 36;
+
+// 浏览器
+$class-browser-nav:-webkit- -moz- '';
+

@@ -1,0 +1,78 @@
+@charset "utf-8";
+// 模态窗口 组件
+
+//
+// @variables
+//
+$modal-Bg-Color: #e8e8e8 !default;
+$modal-Buton-Color: #141414 !default;
+$modal-Buton-Bg: $modal-Bg-Color !default;
+$modal-Buton-Active-Bg: #d4d4d4 !default;
+$modal-Duration: 400ms !default;
+$actions-Modal-Duration: 300ms !default;
+$popover-Bg: rgba(255,255,255,0.95) !default;
+$popup-Duration: 400ms !default;
+
+.modal-overlay, .preloader-indicator-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 11001;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition-duration: $modal-Duration;
+    transition-duration: $modal-Duration;
+    &.modal-overlay-visible {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+.modal {
+    width: rem-calc(540);
+    position: fixed;
+    z-index: 11000;
+    left: 50%;
+    display: none;
+    margin-left: rem-calc(-270);
+    margin-top: 0;
+    top: 50%;
+    text-align: center;
+    border-radius: 7px;
+    opacity: 0;
+    background-color: #ffffff;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, -50%, 0) scale(1.185);
+    -ms-transform: translate3d(0, -50%, 0) scale(1.185);
+    transform: translate3d(0, -50%, 0) scale(1.185);
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    -ms-transition-property: -ms-transform, opacity;
+    -o-transition-property: -o-transform, opacity;
+    transition-property: transform, opacity;
+    &.modal-in {
+        opacity: 1;
+        z-index: 11002;
+        display: block;
+        -webkit-transition-duration: $modal-Duration;
+        transition-duration: $modal-Duration;
+        -webkit-transform: translate3d(0, -50%, 0) scale(1);
+        -ms-transform: translate3d(0, -50%, 0) scale(1);
+        transform: translate3d(0, -50%, 0) scale(1);
+    }
+}
+
+.modal-buttons {
+  height: 44px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}

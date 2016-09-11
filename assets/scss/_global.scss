@@ -1,0 +1,52 @@
+@charset "utf-8";
+// 全局的Mixins和函数
+// 重要：写好充分的注释（模块、使用说明）
+
+
+// HTML和Body的默认字体大小，基本的REM值
+$rem-base: 20px !default;
+// 如果是按照PSD的字体大小、宽度来设书写CSS，rem-rate 就为0.5，否则为1
+$rem-rate: 0.5rem;
+
+
+// 返回计算
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// 转化成REM值，特别注意$rem-rate！
+@function convert-to-rem($value, $base-value: $rem-base)  {
+	$value: strip-unit($value) / strip-unit($base-value) * $rem-rate;
+	@if ($value == 0rem) { $value: 0; } // 设置 0rem 为 0
+	@return $value;
+}
+
+// REM 计算函数
+@function rem-calc($values, $base-value: $rem-base) {
+	$max: length($values);
+
+	@if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }
+
+	$remValues: ();
+	@for $i from 1 through $max {
+		$remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+	}
+	@return $remValues;
+}
+
+
+// 盒子模型
+@mixin compatible($attri,$value){
+  @each $nav in $class-browser-nav{
+    #{$nav}#{$attri}:#{$value};
+  }
+}
+
+// flex
+@mixin flex($values) {
+    -webkit-box-flex: $values;
+    -moz-box-flex:  $values;
+    -ms-flex:  $values;
+    -webkit-flex:  $values;
+    flex:  $values;
+}

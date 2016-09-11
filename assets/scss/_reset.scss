@@ -1,0 +1,97 @@
+@charset "utf-8";
+// reset 组件
+
+// Set box-sizing globally to handle padding and border widths
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout:none;
+  margin:0;
+  padding:0;
+}
+
+html,
+body {
+  -webkit-text-size-adjust : none ;
+  -moz-text-size-adjust : none ;
+  -ms-text-size-adjust : none ;
+  text-size-adjust : none ;
+}
+
+// Default body styles
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: rem-calc($base-font-size);
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+  font-style: $body-font-style;
+  background: $body-bg;
+  line-height: 1.5; // Set to $base-line-height to take on browser default of 150%
+  color: $body-font-color;
+  overflow: hidden;
+}
+
+// Get rid of gap under images by making them display: inline-block; by default
+img {
+  border: 0;
+}
+
+//
+// Global resets for forms
+//
+
+a, input, textarea, select, button {
+  outline: 0;
+}
+
+textarea{
+  overflow: auto;
+}
+
+// Make select elements 100% width by default
+select { width: 100%; }
+
+a{
+  text-decoration: none;
+  color: $color-link;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  &:active{
+    color: $color-link-active;
+  }
+}
+
+ul,li {list-style: none;}
+
+// Grid Defaults to get images and embeds to work properly
+// img,
+// object,
+// embed { max-width: 100%; height: auto; }
+
+object,
+embed { height: 100%; }
+img { -ms-interpolation-mode: bicubic; }
+
+// Font smoothing
+// Antialiased font smoothing works best for light text on a dark background.
+// Apply to single elements instead of globally to body.
+// Note this only applies to webkit-based desktop browsers on the Mac.
+.antialiased { -webkit-font-smoothing: antialiased; }
+
+.none{ display: none!important }
+//input reset
+input[type="submit"],
+input[type="reset"],
+input[type="button"], button,{
+  -webkit-appearance: none;
+}
+input{
+  line-height: normal;
+}
+/* 图片样式 */
+.img-all{
+  width: 100%;
+}

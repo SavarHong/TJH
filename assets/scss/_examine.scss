@@ -1,0 +1,274 @@
+@charset "utf-8";
+
+/* 随堂测试 & 调查问卷页面样式 */
+
+.header-examine,
+.header-survey{
+    overflow: hidden;
+    height: rem-calc(230);
+    .img-pic{
+        width: 100%;
+    }
+}
+.content-examine,
+.content-survey{
+    padding: rem-calc(40);
+    font-size: rem-calc(26);
+    .content-examine-topic{
+        display: none;
+        &:first-child{
+            display: block;
+        }
+    }
+    .content-examine-title,
+    .content-survey-title{
+        display: -webkit-box;
+        display: box;
+        color: #333;
+        .title-num{
+            width: rem-calc(40);
+        }
+        .title-text{
+            -webkit-box-flex: 1;
+            box-flex: 1;
+        }
+    }
+    .content-examine-options,
+    .content-survey-options{
+        display: -webkit-box;
+        display: box;
+        margin: rem-calc(30 0 0);
+        ul{
+            -webkit-box-flex: 1;
+            box-flex: 1;
+            padding-left: rem-calc(40);
+            li{
+                padding-bottom: rem-calc(10);
+                padding-left: rem-calc(30);
+            }
+        }
+        .content-examine-tip{
+            width: rem-calc(160);
+            .img-pic{
+                width: 100%;
+            }
+        }
+        input[type="radio"]{
+            opacity: 0;
+        }
+        label{
+            position: relative;
+            &:before{
+                content: "";
+                display: inline-block;
+                position: absolute;
+                width: rem-calc(28);
+                height: rem-calc(28);
+                left: 0;
+                top: rem-calc(2);
+                margin-left: rem-calc(-50);
+                border: 1px solid #ccc;
+                border-radius: 50%;
+                background-color: #fff;
+                -webkit-transition: border .15s ease-in-out;
+                transition: border .15s ease-in-out;
+            }
+            &:after{
+                content: "";
+                display: inline-block;
+                position: absolute;
+                width: rem-calc(14);
+                height: rem-calc(14);
+                left: rem-calc(7);
+                top: rem-calc(9);
+                margin-left: rem-calc(-50);
+                background-color: #d23f3f;
+                border-radius: 50%;
+                -webkit-transform: scale(0,0);
+                transform: scale(0,0);
+                -webkit-transition: transform .1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+                transition: transform .1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+            }
+        }
+        input[type="radio"]:checked + label:after{
+            -webkit-transform: scale(1,1);
+            transform: scale(1,1);
+        }
+    }
+    .content-examine-button{
+        padding: rem-calc(40 0 0);
+        .button{
+            margin: 0 auto;
+        }
+        &.examine-next{
+            .button{
+                @include border-btn(rem-calc(260), rem-calc(78), #ffae00, rem-calc(30));
+            }
+        }
+        &.examine-done{
+            .button{
+                @include bg-btn(rem-calc(260), rem-calc(78), #ffae00, rem-calc(30));
+            }
+        }
+    }
+}
+
+/* 错误解析页 */
+.page-examine-answer{
+    .header-examine{
+        height: rem-calc(500);
+    }
+    .content-examine{
+        padding-top: rem-calc(0);
+    }
+    .content-examine-topic{
+        display: block;
+        border-bottom: 1px solid #e5e5e5;
+        padding: rem-calc(34 0);
+        &:last-child{
+            border-bottom: none;
+        }
+    }
+    .content-examine-title{
+        .answer{
+            padding-top: rem-calc(24);
+            span{
+                color:#d23f3f;
+            }
+        }
+    }
+}
+
+/* 调查问卷 */
+.content-survey{
+    .content-survey-topic{
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: rem-calc(20);
+    }
+    .content-survey-options{
+        ul{
+            padding-left: rem-calc(20);
+        }
+    }
+    .content-survey-message{
+        padding-top: rem-calc(30);
+        .title{
+            color: #333;
+            padding-bottom: rem-calc(26);
+        }
+        textarea{
+            font-size: rem-calc(24);
+            font-family: $body-font-family;
+            padding: rem-calc(20);
+            width: 100%;
+            border: 1px solid #e5e5e5;
+            background: #fafafa;
+        }
+        .button{
+            margin: rem-calc(50) auto 0;
+            @include bg-btn(rem-calc(260), rem-calc(78), #ffae00, rem-calc(30));
+        }
+    }
+}
+
+/* 答题正确弹出框  */
+.modal-result{
+    width: rem-calc(540);
+    -webkit-box-shadow: 0 8px 10px rgba(0,0,0,.3);
+    box-shadow: 0 8px 10px rgba(0,0,0,.3);
+    .img-pic{
+        width: 100%;
+    }
+    .modal-result-content{
+        padding: rem-calc(30 50 60);
+        .modal-result-points{
+            font-size: rem-calc(50);
+            color: #ffae00;
+            padding-bottom: rem-calc(20);
+        }
+        .modal-result-text{
+            font-size: rem-calc(22);
+            color: #999;
+            padding-bottom: rem-calc(30);
+        }
+        .modal-result-btn{
+            @include border-btn(rem-calc(440), rem-calc(80), #ffae00, rem-calc(30));
+        }
+    }
+}
+.modal-survey{
+    padding-top: rem-calc(70);
+    .modal-result-content{
+        .modal-result-text{
+            font-size: rem-calc(38);
+            color: #333;
+        }
+    }
+    .img-pic{
+        width: rem-calc(120);
+    }
+}
+
+/* 校验提示 */
+.field-tooltipWrap{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.field-tooltipInner{
+    pointer-events: none;
+    display: table;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+}
+.field-tooltip{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+}
+.field-tooltip .field-tooltip-text{
+    display: inline-block;
+    background-color:rgba(0,0,0,0.8);
+    padding: rem-calc(10 15);
+    font-size: rem-calc(24);
+    border-radius: rem-calc(6);
+    box-shadow: 0 0 rem-calc(8) rgba(0,0,0,.1);
+    pointer-events: auto;
+    animation-name:fieldTipBounceIn;
+    -webkit-animation-name:fieldTipBounceIn;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: .18s;
+    animation-duration: .18s;
+}
+@-webkit-keyframes fieldTipBounceIn{
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes
+{
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}

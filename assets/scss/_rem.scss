@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+//
+// Rem
+// --------------------------------------------------
+
+// Vertical screen
+
+//375屏幕为 20px，以此为基础计算出每一种宽度的字体大小
+//375以下不变，375以上等比放大
+
+$baseWidth: 375px;
+$baseFont: 20px;
+
+html {
+  font-size: $baseFont;  //默认当做320px宽度的屏幕来处理
+}
+
+$bps: 400px, 414px, 480px;
+
+@each $bp in ($bps){
+  $font: $bp/$baseWidth*$baseFont;
+  @media only screen and (min-width: $bp){
+	html {
+	  font-size: $font !important;
+	}
+  }
+}
+
+// 如果是按照PSD的字体大小、宽度来设书写CSS，rem-rate 就为0.5，否则为1
+$rem-rate: 0.5rem;
+
+// 返回计算
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// 转化成REM值，特别注意$rem-rate！
+@function convert-to-rem($value, $base-value: $baseFont)  {
+	$value: strip-unit($value) / strip-unit($base-value) * $rem-rate;
+	@if ($value == 0rem) { $value: 0; } // 设置 0rem 为 0
+	@return $value;
+}
+
+// REM 计算函数
+@function rem-calc($values, $base-value: $baseFont) {
+	$max: length($values);
+
+	@if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }
+
+	$remValues: ();
+	@for $i from 1 through $max {
+		$remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+	}
+	@return $remValues;
+}

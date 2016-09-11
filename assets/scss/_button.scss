@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+//button传入宽高颜色和字体大小
+
+.button-type{
+    padding: rem-calc(20);
+}
+
+.btn{
+    @include bg-btn(100%, rem-calc(88), $color-primary, rem-calc(36));
+    margin-bottom: rem-calc(10);
+    &.btn-success{
+        @include bg-btn-color($color-success);
+    }
+    &.btn-warn{
+        @include bg-btn-color($color-warning);
+    }
+    &.btn-danger{
+        @include bg-btn-color($color-danger);
+    }
+    &.btn-default{
+        @include bg-btn-color(#ddd);
+    }
+}
+
+.btn-rounded{
+    border-radius: rem-calc(50);
+}
+
+.btn-outline{
+    @include border-btn(100%, rem-calc(88), $color-primary, rem-calc(36));
+    margin-bottom: rem-calc(10);
+    &.btn-success{
+        @include border-btn-color($color-success);
+    }
+    &.btn-warn{
+        @include border-btn-color($color-warning);
+    }
+    &.btn-danger{
+        @include border-btn-color($color-danger);
+    }
+    &.btn-default{
+        @include border-btn-color(#ddd);
+    }
+}
+
+.btn-group{
+    @include flexbox();
+    .btn-outline{
+        -webkit-box-flex: 1;
+        margin-left: -1px;
+        border-radius: 0;
+        &:first-child{
+            border-radius: rem-calc(6 0 0 6);
+        }
+        &:last-child{
+            border-radius: rem-calc(0 6 6 0);
+        }
+    }
+    .btn-rounded{
+        &:first-child{
+            border-radius: rem-calc(50 0 0 50);
+        }
+        &:last-child{
+            border-radius: rem-calc(0 50 50 0);
+        }
+    }
+}

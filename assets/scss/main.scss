@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+// 引入全局Mixins和变量配置，及所需要的组件
+@import "settings"
+        ,"rem"
+        ,"reset"
+        ,"mixin"
+        ,"page"
+        ,"button"
+        ,"slider"
+        ,"form"
+        ,"module"
+        ,"modal"
+        ;

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable"/>
+	<meta content="yes" name="apple-touch-fullscreen"/>
+	<meta content="telephone=no" name="format-detection"/>
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<script>var isIE=window.navigator.userAgent.match(/MSIE\s*([\d\.]+)/);isIE&&document.write('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />'),!function(a){function b(){var b=g.getBoundingClientRect().width;b/c>540&&(b=540*c),a.rem=b/16,g.style.fontSize=a.rem+"px"}var c,d,e,f=a.document,g=f.documentElement,h=f.querySelector('meta[name="viewport"]'),i=f.querySelector('meta[name="flexible"]');if(h){var j=h.getAttribute("content").match(/initial\-scale=(["']?)([\d\.]+)\1?/);j&&(d=parseFloat(j[2]),c=parseInt(1/d))}else if(i){var j=i.getAttribute("content").match(/initial\-dprNum=(["']?)([\d\.]+)\1?/);j&&(c=parseFloat(j[2]),d=parseFloat((1/c).toFixed(2)))}if(!c&&!d){var k=(a.navigator.appVersion.match(/android/gi),a.navigator.appVersion.match(/iphone/gi)),c=a.devicePixelRatio;c=k?c>=3?3:c>=2?2:1:1,d=1/c}if(g.setAttribute("data-dprNum",c),!h)if(h=f.createElement("meta"),h.setAttribute("name","viewport"),h.setAttribute("content","initial-scale="+d+", maximum-scale="+d+", minimum-scale="+d+", user-scalable=no"),g.firstElementChild)g.firstElementChild.appendChild(h);else{var l=f.createElement("div");l.appendChild(h),f.write(l.innerHTML)}a.dprNum=c,a.addEventListener("resize",function(){clearTimeout(e),e=setTimeout(b,300)},!1),"complete"===f.readyState?f.body.style.fontSize=12*c+"px":f.addEventListener("DOMContentLoaded",function(){f.body.style.fontSize=12*c+"px"},!1),b()}(window);</script>
+	<title>随堂测验</title>
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <div class="page-wrap">
+        <div class="page page-survey">
+            <header class="header-survey">
+                <img src="../assets/img/header-survey.png" class="img-pic" alt="" title="">
+            </header>
+            <section class="content-survey">
+                <article class="content-survey-topic">
+                    <div class="content-survey-title">
+                        <div class="title-text">我们为您准备的沟通资料对您是否有用?</div>
+                    </div>
+                    <div class="content-survey-options">
+                        <ul>
+                            <li>
+                                <input type="radio" name="option" id="option1" value="A">
+                                <label for="option1">有点效果</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="option" id="option2" value="B">
+                                <label for="option2">很有用</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="option" id="option3" value="C">
+                                <label for="option3">毫无建树</label>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+                <div class="content-survey-message">
+                    <div class="title">我们为您准备的沟通资料对您是否有用?</div>
+                    <div class="textarea">
+                        <textarea name="" id="" cols="30" rows="4" placeholder="交给我们，我们帮您提升亲和力"></textarea>
+                    </div>
+                    <div class="button">完成提交</div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../assets/js/zepto.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        initShowInof();
+    });
+
+    function initShowInof(){
+        var $requiredInfo = "";
+        $(".content-survey-message").on("touchend", ".button", function(){
+            if($(".field-tooltipWrap").length > 0){
+                $requiredInfo.remove();
+            }
+            if($(".content-survey-options").find("input[type='radio']:checked").length == 0){
+                $requiredInfo = $('<div class="field-tooltipWrap"><div class="field-tooltipInner"><div class="field-tooltip fieldTipBounceIn"><div class="field-tooltip-text">你没填写完成哟</div></div></div></div>');
+                $requiredInfo.appendTo($("body"));
+            }
+            else if($(this).parent().find("textarea").val() == ""){
+                $requiredInfo = $('<div class="field-tooltipWrap"><div class="field-tooltipInner"><div class="field-tooltip fieldTipBounceIn"><div class="field-tooltip-text">你没填写完成哟</div></div></div></div>');
+                $requiredInfo.appendTo($("body"));
+            }
+            else{
+                $requiredInfo = $('<div class="field-tooltipWrap"><div class="field-tooltipInner"><div class="field-tooltip fieldTipBounceIn"><div class="field-tooltip-text">感谢您的反馈</div></div></div></div>');
+                $requiredInfo.appendTo($("body"));
+            }
+            setTimeout(function(){
+                $requiredInfo.remove();
+            }, 3000)
+        });
+    }
+</script>
+</html>

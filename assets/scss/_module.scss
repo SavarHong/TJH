@@ -1,0 +1,50 @@
+@charset "utf-8";
+// module 组件
+
+
+/* 首页 样式  */
+// nav
+.content-nav{
+    border-bottom: 1px solid #e6e6e6;
+    overflow: hidden;
+    & > a{
+        display: block;
+        float: left;
+        width: 100%;
+        height: rem-calc(149);
+        position: relative;
+        border-top: 1px solid #e6e6e6;
+        .nav-text{
+            @include box();
+            @include box-v-c();
+        }
+        .nav-title{
+            font-size: rem-calc(30);
+        }
+        .nav-title-sub{
+            font-size: rem-calc(24);
+            color: $color-text-gray;
+        }
+    }
+    .nav-wrap{
+        @include box();
+        width: 100%;
+        height: 100%;
+    }
+    .nav-show,
+    .nav-helper{
+        width: 50%;
+    }
+    .nav-show{
+        &:after{
+            content: "";
+            width: 0;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: block;
+            border-right: 1px solid #e6e6e6;
+        }
+    }
+}
