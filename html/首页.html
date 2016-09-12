@@ -12,7 +12,6 @@
     <meta name="format-detection" content="telephone=no">
     <title>首页</title>
     <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/font-awesome.css">
     <link rel="icon" href="">
 </head>
 <body>
@@ -28,6 +27,16 @@
                 </div>
             </header>
             <div class="content">
+                <section>
+                    <div class="swiper-container" data-space-between='10' data-pagination=".swiper-pagination">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="../assets/img/banner/index-banner1.jpg" class="img-all"></div>
+                            <div class="swiper-slide"><img src="../assets/img/banner/index-banner2.jpg" class="img-all"></div>
+                            <div class="swiper-slide"><img src="../assets/img/banner/index-banner3.jpg" class="img-all"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </section>
                 <section class="content-nav">
                     <a href="#" class="nav-guide">
                         <div class="nav-wrap">
@@ -57,26 +66,73 @@
                         </div>
                     </a>
                 </section>
-            </div>
-            <!-- 答题正确 -->
-            <div class="modal modal-result">
-                <div class="modal-inner">
-                    <img src="../assets/img/modal-header-success.png" class="img-pic">
-                    <div class="modal-result-content">
-                        <p class="modal-result-points">10</p>
-                        <p class="modal-result-text">当前测验可获积分</p>
-                        <div class="modal-result-btn">知道了</div>
+                <section class="content-inner">
+                    <div class="content-title-center">精选活动</div>
+                    <div class="content-list-box">
+                        <ul>
+                            <li class="list-item">
+                                <a href="#">
+                                    <div class="photo">
+                                        <img src="../assets/img/product/index-product1.png" class="img-all">
+                                        <span class="tag">活动精选</span>
+                                    </div>
+                                    <div class="info">
+                                        <div class="title">骑行集结号</div>
+                                        <div class="price">
+                                            <span>500</span>/人
+                                        </div>
+                                    </div>
+                                    <p class="text">
+                                        较早混迹于骑行圈的人也许都认识跟头这个人，也都比较熟悉“骑行者”网站，那里提供了大量骑友们的骑行经历，也提供有众多的长途骑行路线和经验技巧。
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="#">
+                                    <div class="photo">
+                                        <img src="../assets/img/product/index-product1.png" class="img-all">
+                                        <span class="tag">活动精选</span>
+                                    </div>
+                                    <div class="info">
+                                        <div class="title">骑行集结号</div>
+                                        <div class="price">
+                                            <span>500</span>/人
+                                        </div>
+                                    </div>
+                                    <p class="text">
+                                        较早混迹于骑行圈的人也许都认识跟头这个人，也都比较熟悉“骑行者”网站，那里提供了大量骑友们的骑行经历，也提供有众多的长途骑行路线和经验技巧。
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="#">
+                                    <div class="photo">
+                                        <img src="../assets/img/product/index-product1.png" class="img-all">
+                                        <span class="tag">活动精选</span>
+                                    </div>
+                                    <div class="info">
+                                        <div class="title">骑行集结号</div>
+                                        <div class="price">
+                                            <span>500</span>/人
+                                        </div>
+                                    </div>
+                                    <p class="text">
+                                        较早混迹于骑行圈的人也许都认识跟头这个人，也都比较熟悉“骑行者”网站，那里提供了大量骑友们的骑行经历，也提供有众多的长途骑行路线和经验技巧。
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                </div>
+                </section>
             </div>
-            <div class="modal-overlay"></div>
         </div>
     </div>
 </body>
 <script type="text/javascript" src="../assets/js/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/plugin/swiper.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
-
+    var tjhSwiper = new Swiper('.swiper-container', {
+        pagination : '.swiper-pagination'
     });
 </script>
 </html>

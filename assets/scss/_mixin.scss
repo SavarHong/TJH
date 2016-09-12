@@ -5,6 +5,7 @@
 //盒子模型
 @mixin flexbox(){
   display: -webkit-box;
+  display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -14,13 +15,13 @@
   display: -moz-box;
   display: box;
 }
-@mixin box-v-c(){
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  box-orient: vertical;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  box-pack: center;
+@mixin box-o-p($orient, $pack){
+  -webkit-box-orient: $orient;
+  -moz-box-orient: $orient;
+  box-orient: $orient;
+  -webkit-box-pack: $pack;
+  -moz-box-pack: $pack;
+  box-pack: $pack;
 }
 
 //浏览器兼容
@@ -102,4 +103,11 @@
 	background-color: $color;
 	border: 1px solid $color;
   }
+}
+// Preserve3D
+@mixin preserve3d() {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
