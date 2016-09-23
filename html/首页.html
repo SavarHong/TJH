@@ -17,15 +17,45 @@
 <body>
     <div class="page-wrap">
         <div class="page">
-            <header class="bar">
-                <a href="#" class="bar-menu menu-left">厦门</a>
-                <a href="#" class="bar-menu menu-right">电话</a>
+            <header class="bar bar-nav">
+                <a href="#" class="bar-menu menu-left">
+                    <i class="icon icon-location"></i>
+                    厦门
+                </a>
+                <a href="#" class="bar-menu menu-right">
+                    <i class="icon icon-phone"></i>
+                </a>
                 <div class="bar-center">
                     <div class="bar-input">
+                        <i class="icon icon-search"></i>
                         <input type="text" placeholder="查找团队方案"/>
                     </div>
                 </div>
             </header>
+            <div class="bar bar-footer">
+                <div class="footer-menu">
+                    <a href="首页.html" class="home active">
+                        <i class="icon icon-home"></i>
+                        <p>首页</p>
+                    </a>
+                    <a href="#" class="search">
+                        <i class="icon icon-search"></i>
+                        <p>找方案</p>
+                    </a>
+                    <a href="#" class="custom">
+                        <i class="icon icon-add"></i>
+                        <span class="button">
+                            <i class="icon icon-add"></i>
+                        </span>
+                        <p>定制方案</p></a>
+                    <a href="#" class="discovery">
+                        <i class="icon icon-discovery"></i>
+                        <p>发现</p></a>
+                    <a href="#" class="mine">
+                        <i class="icon icon-mine"></i>
+                        <p>我的</p></a>
+                </div>
+            </div>
             <div class="content">
                 <section>
                     <div class="swiper-container" data-space-between='10' data-pagination=".swiper-pagination">
@@ -134,5 +164,6 @@
     var tjhSwiper = new Swiper('.swiper-container', {
         pagination : '.swiper-pagination'
     });
+    tjhSwiper();
 </script>
 </html>
