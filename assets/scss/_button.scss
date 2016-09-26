@@ -23,6 +23,21 @@
     }
 }
 
+.footer-btn{
+    display: block;
+    height: rem-calc(98);
+    width: rem-calc(504);
+    font-size: rem-calc(36);
+    background-color: $color-primary;
+    text-align: center;
+    line-height: rem-calc(98);
+    color: #fff;
+    white-space: nowrap;
+    &:active {
+        background-color: #158655;
+    }
+}
+
 .btn-rounded{
     border-radius: rem-calc(50);
 }

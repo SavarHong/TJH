@@ -73,6 +73,10 @@
     background-color: #fff;
     border: 1px solid #e6e6e6;
     border-width: 1px 0;
+    .content-title{
+        font-size: rem-calc(30);
+        padding: rem-calc(25 30 15);
+    }
     .content-title-center{
         text-align: center;
         font-size: rem-calc(30);
@@ -114,6 +118,85 @@
         .text{
             font-size: rem-calc(20);
             color: $color-text-gray;
+        }
+    }
+}
+/* 产品页 样式 */
+// 详情页
+.content-banner{
+    font-size: 0;
+}
+.content-main-info{
+    border-top: 0;
+    .content-title{
+        border-bottom: 1px solid #e6e6e6;
+    }
+}
+.content-info-box{
+    padding: rem-calc(0 15);
+    ul{
+        overflow: hidden;
+    }
+    li{
+        float: left;
+        padding: rem-calc(0 15);
+        font-size: rem-calc(24);
+        color: #333;
+        width: 50%;
+        .info-item-wrap{
+            width: 100%;
+            border-bottom: 1px solid #e6e6e6;
+            min-height: rem-calc(88);
+            @include box();
+            @include box-o-p(vertical, center);
+            & *{
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+        &:last-child{
+            .info-item-wrap{
+                border-bottom: 0;
+            }
+        }
+        .title{
+            width: rem-calc(100);
+        }
+        .current{
+            color: $body-font-color;
+            padding-left: rem-calc(32);
+        }
+        .icon{
+            color: #999;
+            padding-right: rem-calc(10);
+        }
+        del{
+            color: #bbb;
+            padding-left: rem-calc(40);
+        }
+        &.price{
+            width: 100%;
+            .current{
+                color: $color-danger;
+                font-size: rem-calc(36);
+            }
+        }
+    }
+}
+.content-wrap{
+    padding: rem-calc(20 0);
+    .content-type-title{
+        font-size: rem-calc(22);
+        color: $color-primary;
+        padding: rem-calc(15 30);
+    }
+    .content-type-description{
+        padding: rem-calc(50 20);
+        p{
+            font-size: rem-calc(24);
+        }
+        .photo{
+            margin-top: rem-calc(15);
         }
     }
 }
