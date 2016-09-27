@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <title>产品详情</title>
+    <title>产品预定</title>
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="icon" href="">
 </head>
@@ -24,7 +24,7 @@
                 <a href="#" class="bar-menu menu-right">
                 </a>
                 <div class="bar-center">
-                    <h1>产品详情</h1>
+                    <h1>产品预定</h1>
                 </div>
             </header>
             <div class="bar bar-footer">
@@ -33,7 +33,7 @@
                         <i class="icon icon-phone"></i>
                         <p>电话咨询</p>
                     </a>
-                    <div class="footer-btn" onclick="window.location.href='产品预定.html'">立即预定</div>
+                    <div class="footer-btn">立即预定</div>
                 </div>
             </div>
             <div class="page-nav">
@@ -203,7 +203,29 @@
     </div>
 </body>
 <script type="text/javascript" src="../assets/js/zepto.min.js"></script>
-<script type="text/javascript" src="../assets/js/plugin/intro.js"></script>
-<script type="text/javascript" src="../assets/js/plugin/init.js"></script>
-<script type="text/javascript" src="../assets/js/initjs.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        initpageNav();
+    });
+
+    function initpageNav(){
+        var mark = "<div class='page-mark'></div>";
+        $(".page-nav").on("click", ".menu", function(){
+            if($(".page-mark").length == 0){
+                $(".page").append(mark);
+            }
+            if(!$(this).closest("ul").hasClass("active")){
+                $(this).closest("ul").addClass("active");
+            }
+            else{
+                $(this).closest("ul").removeClass("active");
+                $(".page-mark").remove();
+            }
+        });
+        $(".page").on("click", ".page-mark", function(){
+            $(this).remove();
+            $(".page-nav").find("ul").removeClass("active");
+        });
+    }
+</script>
 </html>

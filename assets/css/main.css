@@ -3,19 +3,24 @@ html {
   font-size: 20px;
 }
 
+@media only screen and (min-width: 375px) {
+  html {
+    font-size: 23.4375px !important;
+  }
+}
 @media only screen and (min-width: 400px) {
   html {
-    font-size: 21.33333px !important;
+    font-size: 25px !important;
   }
 }
 @media only screen and (min-width: 414px) {
   html {
-    font-size: 22.08px !important;
+    font-size: 25.875px !important;
   }
 }
 @media only screen and (min-width: 480px) {
   html {
-    font-size: 25.6px !important;
+    font-size: 30px !important;
   }
 }
 * {
@@ -155,7 +160,7 @@ input {
 }
 
 .bar-footer ~ .content {
-  bottom: 2.7rem;
+  bottom: 2.45rem;
 }
 
 /* 顶部导航 */
@@ -174,7 +179,7 @@ input {
   position: absolute;
   display: block;
   width: 100%;
-  line-height: 2.15rem;
+  line-height: 2.2rem;
   text-align: center;
   white-space: nowrap;
 }
@@ -190,7 +195,7 @@ input {
 .bar .bar-center .bar-input {
   width: 10rem;
   height: 1.5rem;
-  margin: 0.35rem auto 0;
+  margin: 0.35rem 0 0 3.8rem;
   position: relative;
 }
 .bar .bar-center .bar-input .icon {
@@ -221,7 +226,6 @@ input {
 .bar .bar-menu i {
   font-size: 0.9rem;
   vertical-align: middle;
-  margin-right: 0.1rem;
 }
 .bar .bar-menu span {
   vertical-align: middle;
@@ -302,6 +306,67 @@ input {
   font-size: 1.4rem;
 }
 
+/* 浮动菜单 */
+.page-nav {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 3.2rem;
+  z-index: 21;
+}
+.page-nav ul {
+  padding: 0.55rem 0.35rem;
+  border-radius: 1.225rem;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+}
+.page-nav ul.active {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.page-nav ul.active li {
+  display: block;
+}
+.page-nav ul.active li.menu a {
+  background-color: #06cc93;
+}
+.page-nav li {
+  margin-bottom: 0.25rem;
+  display: none;
+  min-width: 1.8rem;
+}
+.page-nav li:last-child {
+  margin-bottom: 0;
+}
+.page-nav a {
+  text-align: center;
+  display: block;
+  color: #fff;
+  font-size: 0.45rem;
+}
+.page-nav a .icon {
+  font-size: 0.9rem;
+}
+.page-nav .menu {
+  display: block;
+}
+.page-nav .menu a {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 1.4rem;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.page-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: 20;
+}
+
 @font-face {
   font-family: "iconfont";
   src: url("../fonts/iconfont.woff") format("woff"), url("../fonts/iconfont.ttf") format("truetype"), url("../fonts/iconfont.svg#iconfont") format("svg")
@@ -380,6 +445,10 @@ input {
   content: "\e908";
 }
 
+.icon-go-top:before {
+  content: "\e911";
+}
+
 .button-type {
   padding: 0.5rem;
 }
@@ -438,7 +507,7 @@ input {
 .footer-btn {
   display: block;
   height: 2.45rem;
-  width: 12.6rem;
+  width: 78%;
   font-size: 0.9rem;
   background-color: #06cc93;
   text-align: center;
@@ -1104,6 +1173,11 @@ input {
   width: 100%;
   border-bottom: 1px solid #e6e6e6;
   min-height: 2.2rem;
+  overflow: hidden;
+  display: -webkit-box;
+  display: box;
+}
+.content-info-box li .info-item-wrap div {
   display: -webkit-box;
   display: box;
   -webkit-box-orient: vertical;
@@ -1113,10 +1187,6 @@ input {
   -moz-box-pack: center;
   box-pack: center;
 }
-.content-info-box li .info-item-wrap * {
-  display: inline-block;
-  vertical-align: middle;
-}
 .content-info-box li:last-child .info-item-wrap {
   border-bottom: 0;
 }
@@ -1125,7 +1195,11 @@ input {
 }
 .content-info-box li .current {
   color: #666;
-  padding-left: 0.8rem;
+  padding-left: 0.65rem;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  white-space: nowrap;
 }
 .content-info-box li .icon {
   color: #999;
@@ -1134,6 +1208,7 @@ input {
 .content-info-box li del {
   color: #bbb;
   padding-left: 1rem;
+  font-size: 0.6rem;
 }
 .content-info-box li.price {
   width: 100%;

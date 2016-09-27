@@ -36,7 +36,7 @@
     top: rem-calc(88);
 }
 .bar-footer ~ .content{
-    bottom: rem-calc(108);
+    bottom: rem-calc(98);
 }
 
 /* 顶部导航 */
@@ -54,7 +54,7 @@
         position: absolute;
         display: block;
         width: 100%;
-        line-height: rem-calc(86);
+        line-height: rem-calc(88);
         text-align: center;
         white-space: nowrap;
     }
@@ -69,7 +69,7 @@
         .bar-input{
             width: rem-calc(400);
             height: rem-calc(60);
-            margin: rem-calc(14) auto 0;
+            margin: rem-calc(14 0 0 152);
             position: relative;
             .icon{
                 font-size: rem-calc(36);
@@ -100,7 +100,6 @@
         i{
             font-size: rem-calc(36);
             vertical-align: middle;
-            margin-right: rem-calc(4);
         }
         span{
             vertical-align: middle;
@@ -178,4 +177,62 @@
             }
         }
     }
+}
+/* 浮动菜单 */
+.page-nav{
+    position: absolute;
+    right: rem-calc(30);
+    bottom: rem-calc(128);
+    z-index: 21;
+    ul{
+        padding: rem-calc(22 14);
+        border-radius: rem-calc(49);
+        transition-duration: 500ms;
+        &.active{
+            background-color: rgba(0,0,0,.7);
+            li{
+                display: block;
+                &.menu a{
+                    background-color: $color-primary;
+                }
+            }
+        }
+    }
+    li{
+        margin-bottom: rem-calc(10);
+        display: none;
+        min-width: rem-calc(72);
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    a{
+        text-align: center;
+        display: block;
+        color: #fff;
+        font-size: rem-calc(18);
+        .icon{
+            font-size: rem-calc(36);
+        }
+    }
+    .menu{
+        display: block;
+        a{
+            background-color: rgba(0,0,0,.3);
+            width: rem-calc(56);
+            height: rem-calc(56);
+            line-height: rem-calc(56);
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+    }
+}
+.page-mark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0);
+    z-index: 20;
 }

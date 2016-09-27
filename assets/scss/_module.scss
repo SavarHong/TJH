@@ -147,11 +147,11 @@
             width: 100%;
             border-bottom: 1px solid #e6e6e6;
             min-height: rem-calc(88);
+            overflow: hidden;
             @include box();
-            @include box-o-p(vertical, center);
-            & *{
-                display: inline-block;
-                vertical-align: middle;
+            & div{
+                @include box();
+                @include box-o-p(vertical, center);
             }
         }
         &:last-child{
@@ -164,7 +164,11 @@
         }
         .current{
             color: $body-font-color;
-            padding-left: rem-calc(32);
+            padding-left: rem-calc(26);
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            box-flex: 1;
+            white-space: nowrap;
         }
         .icon{
             color: #999;
@@ -173,6 +177,7 @@
         del{
             color: #bbb;
             padding-left: rem-calc(40);
+            font-size: rem-calc(24);
         }
         &.price{
             width: 100%;
