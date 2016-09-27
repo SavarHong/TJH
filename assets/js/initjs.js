@@ -10,6 +10,9 @@ $(function () {
         TJH init js
     ===========================*/
 
+    //首页banner滚动
+    $(".content-banner > .swiper-container").swiper({loop: true});
+
     //页面浮动菜单
     $(document).on("pageInit", ".page", function(e, id, page){
         var mark = "<div class='page-mark'></div>";
