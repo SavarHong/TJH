@@ -121,6 +121,50 @@
         }
     }
 }
+.phone-box{
+    @include box();
+    & > *{
+        @include box();
+        @include box-o-p(vertical, center);
+    }
+    &:after{
+        content: '\e90f';
+        font-family:"iconfont" !important;
+        font-style:normal;
+        font-size: rem-calc(24);
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+        -moz-osx-font-smoothing: grayscale;
+        width: 0;
+        height: 0;
+        display: block;
+        color: $color-text-gray;
+        position: absolute;
+        right: rem-calc(50);
+    }
+    .phone-icon{
+        width: rem-calc(48);
+        text-align: center;
+        margin-left: rem-calc(52);
+        .icon{
+            width: 100%;
+            height: rem-calc(48);
+            line-height: rem-calc(48);
+            border-radius: rem-calc(6);
+            background-color: $color-primary;
+            color: #fff;
+            font-size: rem-calc(36);
+            display: block;
+        }
+    }
+    .phone-type{
+        padding-left: rem-calc(32);
+    }
+    .phone-num{
+        color: $color-text-gray;
+        padding-left: rem-calc(72);
+    }
+}
 /* 产品页 样式 */
 // 详情页
 .content-banner{

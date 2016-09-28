@@ -418,7 +418,7 @@ input {
 }
 
 .icon-arrow-right:before {
-  content: "\e91f";
+  content: "\e90f";
 }
 
 .icon-arrow-top:before {
@@ -742,13 +742,13 @@ input {
   height: 8px;
   display: inline-block;
   border-radius: 100%;
-  background: #000;
-  opacity: 0.2;
+  background: #ddd;
+  opacity: 0.55;
 }
 
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #007aff;
+  background: #06cc93;
 }
 
 .swiper-container-vertical > .swiper-pagination {
@@ -961,13 +961,13 @@ input {
 }
 
 .modal-overlay, .preloader-indicator-overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 11001;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10600;
   visibility: hidden;
   opacity: 0;
   -webkit-transition-duration: 400ms;
@@ -1020,6 +1020,125 @@ input {
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
+}
+
+.actions-modal {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 11000;
+  width: 100%;
+  -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+}
+.actions-modal.modal-in {
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.actions-modal.modal-out {
+  z-index: 10999;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+}
+
+.actions-modal-button, .actions-modal-label {
+  width: 100%;
+  font-size: 0.75rem;
+  min-height: 2.2rem;
+  text-align: center;
+  font-weight: normal;
+  margin: 0;
+  background: #f8f8f8;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+}
+.actions-modal-button:after, .actions-modal-label:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #e6e6e6;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 100%;
+      -ms-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .actions-modal-button:after, .actions-modal-label:after {
+    -webkit-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  .actions-modal-button:after, .actions-modal-label:after {
+    -webkit-transform: scaleY(0.33);
+        -ms-transform: scaleY(0.33);
+            transform: scaleY(0.33);
+  }
+}
+.actions-modal-button a, .actions-modal-label a {
+  text-decoration: none;
+  color: inherit;
+}
+.actions-modal-button.actions-modal-button-danger, .actions-modal-label.actions-modal-button-danger {
+  color: #ff000c;
+}
+.actions-modal-button.color-danger, .actions-modal-label.color-danger {
+  color: #ff000c;
+}
+.actions-modal-button.bg-danger, .actions-modal-label.bg-danger {
+  background: #ff000c;
+  color: white;
+}
+.actions-modal-button.bg-danger:active, .actions-modal-label.bg-danger:active {
+  background: #dd020c;
+}
+.actions-modal-button:last-child:after, .actions-modal-label:last-child:after {
+  display: none;
+}
+.actions-modal-button.disabled, .actions-modal-label.disabled {
+  opacity: 0.95;
+  color: #ddd;
+}
+
+.actions-modal-button {
+  color: #333;
+  line-height: 2.2rem;
+}
+.actions-modal-button:active, .actions-modal-button.active-state {
+  background: #dcdcdc;
+}
+
+.actions-modal-label {
+  padding: 0.25rem;
+  color: #666;
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+}
+
+.actions-list-item {
+  background-color: #fff;
+  text-align: left;
+}
+.actions-list-item:active, .actions-list-item.active-state {
+  background: #eee;
 }
 
 /* 首页 样式  */
@@ -1142,6 +1261,58 @@ input {
 .content-inner .list-item .text {
   font-size: 0.5rem;
   color: #999;
+}
+
+.phone-box {
+  display: -webkit-box;
+  display: box;
+}
+.phone-box > * {
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+}
+.phone-box:after {
+  content: '\e90f';
+  font-family: "iconfont" !important;
+  font-style: normal;
+  font-size: 0.6rem;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  width: 0;
+  height: 0;
+  display: block;
+  color: #999;
+  position: absolute;
+  right: 1.25rem;
+}
+.phone-box .phone-icon {
+  width: 1.2rem;
+  text-align: center;
+  margin-left: 1.3rem;
+}
+.phone-box .phone-icon .icon {
+  width: 100%;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  border-radius: 0.15rem;
+  background-color: #06cc93;
+  color: #fff;
+  font-size: 0.9rem;
+  display: block;
+}
+.phone-box .phone-type {
+  padding-left: 0.8rem;
+}
+.phone-box .phone-num {
+  color: #999;
+  padding-left: 1.8rem;
 }
 
 /* 产品页 样式 */

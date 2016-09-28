@@ -1,30 +1,19 @@
 @charset "utf-8";
 // 模态窗口 组件
 
-//
-// @variables
-//
-$modal-Bg-Color: #e8e8e8 !default;
-$modal-Buton-Color: #141414 !default;
-$modal-Buton-Bg: $modal-Bg-Color !default;
-$modal-Buton-Active-Bg: #d4d4d4 !default;
-$modal-Duration: 400ms !default;
-$actions-Modal-Duration: 300ms !default;
-$popover-Bg: rgba(255,255,255,0.95) !default;
-$popup-Duration: 400ms !default;
-
+// modal
 .modal-overlay, .preloader-indicator-overlay {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 11001;
+    background: rgba(0,0,0,0.3);
+    z-index: 10600;
     visibility: hidden;
     opacity: 0;
-    -webkit-transition-duration: $modal-Duration;
-    transition-duration: $modal-Duration;
+    -webkit-transition-duration: $modal-duration;
+    transition-duration: $modal-duration;
     &.modal-overlay-visible {
         visibility: visible;
         opacity: 1;
@@ -56,14 +45,13 @@ $popup-Duration: 400ms !default;
         opacity: 1;
         z-index: 11002;
         display: block;
-        -webkit-transition-duration: $modal-Duration;
-        transition-duration: $modal-Duration;
+        -webkit-transition-duration: $modal-duration;
+        transition-duration: $modal-duration;
         -webkit-transform: translate3d(0, -50%, 0) scale(1);
         -ms-transform: translate3d(0, -50%, 0) scale(1);
         transform: translate3d(0, -50%, 0) scale(1);
     }
 }
-
 .modal-buttons {
   height: 44px;
   overflow: hidden;
@@ -75,4 +63,134 @@ $popup-Duration: 400ms !default;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
+}
+
+// Action sheet
+.actions-modal {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 11000;
+    width: 100%;
+    transform: translate3d(0,100%,0);
+    &.modal-in {
+        transition-duration: $actions-modal-duration;
+        transform: translate3d(0,0,0);
+    }
+    &.modal-out {
+        z-index: 11000-1;
+        transition-duration: $actions-modal-duration;
+        transform: translate3d(0,100%,0);
+    }
+}
+.actions-modal-button, .actions-modal-label {
+    width: 100%;
+    font-size: rem-calc(30);
+    min-height: rem-calc(88);
+    text-align: center;
+    font-weight: normal;
+    margin: 0;
+    background: $actions-modal-button-bg;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    @include hairline(bottom, #e6e6e6);
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    &.actions-modal-button-danger {
+        color: $color-danger;
+    }
+    &.color-danger {
+      color: $color-danger;
+    }
+    &.bg-danger {
+        background: $color-danger;
+        color: white;
+        &:active {
+            background: $color-danger-active;
+        }
+    }
+    &:last-child {
+        @include hairline-remove(bottom);
+    }
+    &.disabled {
+        opacity: 0.95;
+        color: #ddd;
+    }
+}
+.actions-modal-button {
+    color: $color-title;
+    line-height: rem-calc(88);
+    &:active, &.active-state {
+        background: $actions-modal-active-button-bg;
+    }
+}
+.actions-modal-label {
+    padding: rem-calc(10);
+    color: $body-font-color;
+    @include box();
+    @include box-o-p(vertical, center);
+}
+.actions-list-item{
+    background-color: #fff;
+    text-align: left;
+    &:active, &.active-state {
+        background: #eee;
+    }
+}
+
+// Picker Modal
+.picker-modal {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 13rem;
+    z-index: 11500;
+    display: none;
+    transition-property: transform;
+    background: #cfd5da;
+    transform: translate3d( 0,100%,0);
+    &.modal-in, &.modal-out {
+        transition-duration: 400ms;
+    }
+    &.modal-in {
+        transform: translate3d(0,0,0);
+    }
+    &.modal-out {
+        transform: translate3d(0,100%,0);
+    }
+    .picker-modal-inner {
+        height: 100%;
+        position: relative;
+    }
+    .toolbar {
+        .hairline(top, @color-text-gray);
+        position: relative;
+        width: 100%;
+        + .picker-modal-inner {
+            height: ~"-webkit-calc(100% - 2.2rem)";
+            height: ~"-moz-calc(100% - 2.2rem)";
+            height: ~"calc(100% - 2.2rem)";
+        }
+    }
+    &.picker-modal-inline, .popover & {
+        display: block;
+        position: relative;
+        background: none;
+        z-index: inherit;
+        transform: translate3d(0,0,0);
+        .toolbar {
+            .hairline-remove(top);
+            .hairline(bottom, @color-text-gray);
+        }
+    }
+    .popover & {
+        width: auto;
+        .toolbar {
+            background: none;
+        }
+    }
 }

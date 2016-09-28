@@ -22,12 +22,15 @@ $color-danger: #ff000c;
 $color-warning: #ffa500;
 $color-success: #48dc6b;
 
-$color-primary-acitve: #0bb57e;
+$color-primary-active: #0bb57e;
+$color-danger-active: #dd020c;
+$color-warning-active: #db8e00;
+$color-success-active: #38ad54;
 
 $color-title: #333;
 $color-text-gray: #999;
 $color-link: $color-primary;
-$color-link-active: $color-primary-acitve;
+$color-link-active: $color-primary-active;
 
 // Bars
 
@@ -39,4 +42,17 @@ $button-font-size: 36;
 
 // 浏览器
 $class-browser-nav:-webkit- -moz- '';
+
+// 弹出窗
+
+$modal-bg-color: #e8e8e8 !default;
+$modal-buton-color: #141414 !default;
+$modal-buton-bg: $modal-bg-color !default;
+$modal-buton-active-bg: #d4d4d4 !default;
+$modal-duration: 400ms !default;
+$actions-modal-duration: 300ms !default;
+$actions-modal-button-bg: #f8f8f8 !default;
+$actions-modal-active-button-bg:#dcdcdc;
+$popover-bg: rgba(255,255,255,0.95) !default;
+$popup-Duration: 400ms !default;
 

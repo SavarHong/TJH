@@ -140,12 +140,12 @@
     height: 8px;
     display: inline-block;
     border-radius: 100%;
-    background: #000;
-    opacity: 0.2;
+    background: #ddd;
+    opacity: 0.55;
 }
 .swiper-pagination-bullet-active {
     opacity: 1;
-    background: #007aff;
+    background: $color-primary;
 }
 .swiper-container-vertical {
     > .swiper-pagination {
