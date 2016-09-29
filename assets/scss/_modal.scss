@@ -167,13 +167,13 @@
         position: relative;
     }
     .toolbar {
-        .hairline(top, @color-text-gray);
+        @include hairline(top, $color-text-gray);
         position: relative;
         width: 100%;
         + .picker-modal-inner {
-            height: ~"-webkit-calc(100% - 2.2rem)";
-            height: ~"-moz-calc(100% - 2.2rem)";
-            height: ~"calc(100% - 2.2rem)";
+            height: -webkit-calc(100% - 2.2rem);
+            height: -moz-calc(100% - 2.2rem);
+            height: calc(100% - 2.2rem);
         }
     }
     &.picker-modal-inline, .popover & {
@@ -183,8 +183,8 @@
         z-index: inherit;
         transform: translate3d(0,0,0);
         .toolbar {
-            .hairline-remove(top);
-            .hairline(bottom, @color-text-gray);
+            @include hairline-remove(top);
+            @include hairline(bottom, $color-text-gray);
         }
     }
     .popover & {

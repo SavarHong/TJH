@@ -236,7 +236,6 @@
     padding: rem-calc(20 0);
     .content-type-title{
         font-size: rem-calc(22);
-        color: $color-primary;
         padding: rem-calc(15 30);
     }
     .content-type-description{
@@ -246,6 +245,49 @@
         }
         .photo{
             margin-top: rem-calc(15);
+        }
+    }
+    .content-type-insurance{
+        padding: rem-calc(30);
+        .insurance-title{
+            font-size: rem-calc(30);
+            color: $color-title;
+            font-weight: bold;
+            padding-bottom: rem-calc(20);
+            border-bottom: 1px solid #e6e6e6;
+        }
+        .insurance-content{
+            .insurance-wrap{
+                @include box();
+                -webkit-box-pack: justify;
+                -moz-box-pack: justify;
+                box-pack: justify;
+                padding-top: rem-calc(15);
+                div{
+                    @include flexbox();
+                    align-items:center;
+                }
+                .insurance-text{
+                    font-size: rem-calc(24);
+                }
+                .insurance-checkbox{
+                    width: rem-calc(30);
+                    text-align: center;
+                    .icon{
+                        width: 100%;
+                        height: rem-calc(30);
+                        line-height: rem-calc(30);
+                        border-radius: rem-calc(4);
+                        background-color: $color-primary;
+                        color: #fff;
+                        font-size: rem-calc(24);
+                        display: block;
+                        &.icon-disabled{
+                            background-color: #e5e5e5;
+                        }
+                    }
+                }
+            }
         }
     }
 }
