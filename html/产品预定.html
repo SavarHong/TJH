@@ -28,11 +28,8 @@
                 </div>
             </header>
             <div class="bar bar-footer">
-                <div class="footer-menu">
-                    <a href="#" class="home">
-                        <i class="icon icon-phone"></i>
-                        <p>电话咨询</p>
-                    </a>
+                <div class="footer-menu footer-tip">
+                    <p class="tip-info">请选择活动日期和人数</p>
                     <div class="footer-btn">立即预定</div>
                 </div>
             </div>
@@ -76,8 +73,29 @@
                 </ul>
             </div>
             <div class="content">
-                <section class="content-banner">
-                    <input type="text" placeholder="Your name" id="birthday" data-toggle="date" readonly="">
+                <section class="content-wrap">
+                    <div class="content-inner">
+                        <div class="content-reserve-info">
+                            <ul>
+                                <li>
+                                    <div class="reserve-info-wrap">
+                                        <div class="reserve-type">活动日期 <span class="color-danger">*</span></div>
+                                        <div class="reserve-input">
+                                            <input type="text" placeholder="请选择日期" id="birthday" data-toggle="date" readonly>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reserve-info-wrap">
+                                        <div class="reserve-type">计划参与人数</div>
+                                        <div class="reserve-input">
+                                            <input type="text" placeholder="请输入人数">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </section>
                 <section class="content-wrap">
                     <h5 class="content-type-title color-title">保险信息</h5>
@@ -87,11 +105,76 @@
                                 <li>
                                     <div class="insurance-title">意外险1：单价 &yen;10/人</div>
                                     <div class="insurance-content">
-                                        <div class="insurance-wrap">
+                                        <div class="insurance-info">
                                             <div class="insurance-text">太平洋意外保险16款</div>
-                                            <div class="insurance-checkbox"><i class="icon icon-check icon-disabled"></i></div>
+                                            <div class="insurance-checkbox"><i class="icon icon-check"></i></div>
                                         </div>
-                                        </p>
+                                        <div class="insurance-description div-collapse">
+                                            <p>保险类型：意外险</p>
+                                            <p>
+                                                保险描述：<br>
+                                                1. 意外伤害<br>
+                                                2. 投保须知
+                                            </p>
+                                            <p>
+                                                投保须知（特别说明）：<br>
+                                                1. 意外伤害<br>
+                                                2. 投保须知
+                                            </p>
+                                        </div>
+                                        <div class="div-collapse-operation arrow-top">
+                                            <i class="icon icon-arrow-bottom"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="insurance-title">意外险2：单价 &yen;20/人</div>
+                                    <div class="insurance-content">
+                                        <div class="insurance-info">
+                                            <div class="insurance-text">太平洋意外保险16款</div>
+                                            <div class="insurance-checkbox"><i class="icon icon-check"></i></div>
+                                        </div>
+                                        <div class="insurance-description div-collapse">
+                                            <p>保险类型：意外险</p>
+                                            <p>
+                                                保险描述：<br>
+                                                1. 意外伤害<br>
+                                                2. 投保须知
+                                            </p>
+                                            <p>
+                                                投保须知（特别说明）：<br>
+                                                1. 意外伤害<br>
+                                                2. 投保须知
+                                            </p>
+                                        </div>
+                                        <div class="div-collapse-operation arrow-top">
+                                            <i class="icon icon-arrow-bottom"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="content-wrap">
+                    <h5 class="content-type-title color-title">预订人信息</h5>
+                    <div class="content-inner">
+                        <div class="content-customer-info">
+                            <ul>
+                                <li>
+                                    <div class="customer-info-wrap">
+                                        <div class="customer-type">姓名 <span class="color-danger">*</span></div>
+                                        <div class="customer-input">
+                                            <input type="text" value="李小龙">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="customer-info-wrap">
+                                        <div class="customer-type">手机</div>
+                                        <div class="customer-input">
+                                            <input type="text" value="15858588858">
+                                        </div>
                                     </div>
                                 </li>
                             </ul>

@@ -233,7 +233,7 @@
     }
 }
 .content-wrap{
-    padding: rem-calc(20 0);
+    padding: rem-calc(20 0 10);
     .content-type-title{
         font-size: rem-calc(22);
         padding: rem-calc(15 30);
@@ -247,22 +247,57 @@
             margin-top: rem-calc(15);
         }
     }
+    .content-reserve-info{
+        li{
+            padding: rem-calc(0 30);
+            &:last-child{
+                .reserve-info-wrap{
+                    border-bottom: 0;
+                }
+            }
+        }
+        .reserve-info-wrap{
+            @include box();
+            font-size: rem-calc(30);
+            height: rem-calc(88);
+            border-bottom: 1px solid #e6e6e6;
+            div{
+                @include flexbox();
+                align-items:center;
+            }
+            .reserve-type{
+                width: rem-calc(190);
+            }
+            .reserve-input{
+                -webkit-box-flex: 1;
+                -moz-box-flex: 1;
+                box-flex: 1;
+            }
+        }
+    }
     .content-type-insurance{
-        padding: rem-calc(30);
+        li{
+            padding: rem-calc(30);
+            border-bottom: 1px solid #e6e6e6;
+            position: relative;
+            &:last-child{
+                border-bottom: 0;
+            }
+        }
         .insurance-title{
             font-size: rem-calc(30);
             color: $color-title;
-            font-weight: bold;
+            font-weight: 500;
             padding-bottom: rem-calc(20);
             border-bottom: 1px solid #e6e6e6;
         }
         .insurance-content{
-            .insurance-wrap{
+            .insurance-info{
                 @include box();
                 -webkit-box-pack: justify;
                 -moz-box-pack: justify;
                 box-pack: justify;
-                padding-top: rem-calc(15);
+                padding: rem-calc(15 0 20);
                 div{
                     @include flexbox();
                     align-items:center;
@@ -278,15 +313,74 @@
                         height: rem-calc(30);
                         line-height: rem-calc(30);
                         border-radius: rem-calc(4);
-                        background-color: $color-primary;
-                        color: #fff;
+                        background-color: #e5e5e5;
+                        color: #e5e5e5;
                         font-size: rem-calc(24);
                         display: block;
-                        &.icon-disabled{
-                            background-color: #e5e5e5;
-                        }
                     }
                 }
+                &.status-active{
+                    .icon{
+                        background-color: $color-primary;
+                        color: #fff;
+                    }
+                }
+            }
+            .arrow-top{
+                width: rem-calc(80);
+                height: rem-calc(60);
+                line-height: rem-calc(60);
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                -webkit-transform: translate(-50%, 0);
+                -moz-transform: translate(-50%, 0);
+                transform: translate(-50%, 0);
+                text-align: center;
+                .icon{
+                    color: $color-text-gray;
+                }
+            }
+            .insurance-description{
+                font-size: rem-calc(20);
+                color: $color-text-gray;
+                padding: rem-calc(20 15 15);
+                transition-duration: 300ms;
+                opacity: 1;
+                p{
+                    padding-bottom: rem-calc(10);
+                }
+                &.div-collapse{
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+    .content-customer-info{
+        li{
+            padding: rem-calc(0 30);
+            &:last-child{
+                .customer-info-wrap{
+                    border-bottom: 0;
+                }
+            }
+        }
+        .customer-info-wrap{
+            @include box();
+            font-size: rem-calc(30);
+            height: rem-calc(88);
+            border-bottom: 1px solid #e6e6e6;
+            div{
+                @include flexbox();
+                align-items:center;
+            }
+            .customer-type{
+                width: rem-calc(190);
+            }
+            .customer-input{
+                -webkit-box-flex: 1;
+                -moz-box-flex: 1;
+                box-flex: 1;
             }
         }
     }

@@ -59,6 +59,33 @@ $(function () {
         });
     });
 
+    // 层折叠
+    $(document).on("pageInit", ".page", function(e, id, page) {
+        $(this).on('click', '.div-collapse-operation', function(){
+            if($(this).prev().hasClass("div-collapse")){
+                $(this).prev().removeClass("div-collapse");
+                $(this).children().attr("class", "icon icon-arrow-top");
+            }
+            else{
+                $(this).prev().addClass("div-collapse");
+                $(this).children().attr("class", "icon icon-arrow-bottom");
+            }
+        });
+    });
+
+    // 点击激活
+    $(document).on("pageInit", ".page", function(e, id, page) {
+        var node = $.tjhConfig.clickStatusActive;
+        $(this).on('click', node, function(){
+            if(!$(this).hasClass("status-active")){
+                $(this).addClass("status-active");
+            }
+            else{
+                $(this).removeClass("status-active");
+            }
+        });
+    });
+
     $.init();
 });
 

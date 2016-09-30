@@ -178,6 +178,16 @@
         }
     }
 }
+.footer-tip{
+    align-items:center;
+    .tip-info{
+        font-size: rem-calc(24);
+        flex: 1;
+    }
+    .footer-btn{
+        width: rem-calc(200);
+    }
+}
 /* 浮动菜单 */
 .page-nav{
     position: absolute;

@@ -88,11 +88,32 @@ input[type="reset"],
 input[type="button"], button,{
     -webkit-appearance: none;
 }
+input[type="text"],
+input[type="password"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    border: 0;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: rem-calc(30);
+    color: #666;
+    height: rem-calc(80);
+    width: 100%;
+    font-family: inherit;
+}
 input{
     line-height: normal;
 }
 .clearfix{
     @include clearfix();
+}
+.div-collapse{
+    height: 0;
+    overflow: hidden;
+    opacity: 0 !important;
 }
 /* 图片样式 */
 .img-all{
@@ -101,6 +122,9 @@ input{
 /* 颜色样式 */
 .color-primary{
     color: $color-primary;
+}
+.color-danger{
+    color: $color-danger;
 }
 .color-title{
     color: $color-title;
