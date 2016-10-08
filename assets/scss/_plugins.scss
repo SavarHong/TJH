@@ -359,11 +359,12 @@
 }
 
 .picker-calendar-week-days {
-    height: 18px;
-    background: #f7f7f8;
+    height: 30px;
+    background: #f3f5f7;
     @include flexbox();
+    @include hairline(top, #c4c4c4);
     @include hairline(bottom, #c4c4c4);
-    font-size: 11px;
+    font-size: 13px;
     box-sizing: border-box;
     position: relative;
     .picker-calendar-week-day {
@@ -372,13 +373,13 @@
         width: -webkit-calc(100% / 7);
         width: -moz-calc(100% / 7);
         width: calc(100% / 7);
-        line-height: 17px;
+        line-height: 30px;
         text-align: center;
     }
     + .picker-calendar-months {
-        height: -webkit-calc(100% - 18px);
-        height: -moz-calc(100% - 18px);
-        height: calc(100% - 18px);
+        height: -webkit-calc(100% - 30px);
+        height: -moz-calc(100% - 30px);
+        height: calc(100% - 30px);
     }
 }
 .picker-calendar-months {
@@ -471,6 +472,9 @@
     flex-shrink: 10;
     a.icon-only {
         min-width: 36px;
+        .icon{
+            color: $color-text-gray;
+        }
     }
     span {
         flex-shrink: 1;
@@ -516,6 +520,8 @@
     float: left;
     width: 50%;
     height: 2.2rem;
+    color: #333;
+    font-size: rem-calc(30);
   }
 }
 

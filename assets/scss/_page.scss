@@ -182,10 +182,89 @@
     align-items:center;
     .tip-info{
         font-size: rem-calc(24);
+        -webkit-flex: 1;
+        -moz-flex: 1;
         flex: 1;
+        padding-left: rem-calc(30);
     }
     .footer-btn{
         width: rem-calc(200);
+    }
+    .required-info{
+        display: none;
+    }
+    .tip-info-text{
+        color: $color-text-gray;
+        .tip-info-total *{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .color-danger{
+            margin-right: rem-calc(20);
+        }
+        .icon{
+            color: $color-text-gray;
+            font-size: rem-calc(20);
+        }
+    }
+    .tip-info-detail{
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: rem-calc(98);
+        background-color: #fff;
+        border-top: 1px solid #e6e6e6;
+        transition-duration: 300ms;
+        opacity: 1;
+        .content-type-info{
+            li{
+                padding: rem-calc(0 30);
+                &:last-child{
+                    .type-info-wrap{
+                        border-bottom: 0;
+                    }
+                }
+            }
+            .type-info-wrap{
+                @include box();
+                font-size: rem-calc(30);
+                height: rem-calc(88);
+                border-bottom: 1px solid #e6e6e6;
+                div{
+                    @include box();
+                    align-items:center;
+                }
+                .type-info-title{
+                    width: rem-calc(190);
+                    border-right: 1px solid #e6e6e6;
+                }
+                .type-info-text{
+                    -webkit-box-flex: 1;
+                    -moz-box-flex: 1;
+                    box-flex: 1;
+                    padding-left: rem-calc(20);
+                    -webkit-box-pack: justify;
+                    -moz-box-pack: justify;
+                    box-pack: justify;
+                    .color-text-light{
+                        font-size: rem-calc(24);
+                    }
+                }
+            }
+        }
+    }
+    &.disabled{
+        color: #bbb;
+        .required-info{
+            display: block;
+        }
+        .tip-info-text{
+            display: none;
+        }
+        .footer-btn{
+            background-color: #ddd;
+        }
     }
 }
 /* 浮动菜单 */

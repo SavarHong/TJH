@@ -4920,16 +4920,16 @@ Framework7 Swiper Additions
           monthPicker: true,
           monthPickerTemplate:
               '<div class="picker-calendar-month-picker">' +
-                  '<a href="#" class="link icon-only picker-calendar-prev-month"><i class="icon icon-prev"></i></a>' +
+                  '<a href="#" class="link icon-only picker-calendar-prev-month"><i class="icon icon-arrow-left"></i></a>' +
                   '<div class="current-month-value"></div>' +
-                  '<a href="#" class="link icon-only picker-calendar-next-month"><i class="icon icon-next"></i></a>' +
+                  '<a href="#" class="link icon-only picker-calendar-next-month"><i class="icon icon-arrow-right"></i></a>' +
               '</div>',
           yearPicker: true,
           yearPickerTemplate:
               '<div class="picker-calendar-year-picker">' +
-                  '<a href="#" class="link icon-only picker-calendar-prev-year"><i class="icon icon-prev"></i></a>' +
+                  '<a href="#" class="link icon-only picker-calendar-prev-year"><i class="icon icon-arrow-left"></i></a>' +
                   '<span class="current-year-value"></span>' +
-                  '<a href="#" class="link icon-only picker-calendar-next-year"><i class="icon icon-next"></i></a>' +
+                  '<a href="#" class="link icon-only picker-calendar-next-year"><i class="icon icon-arrow-right"></i></a>' +
               '</div>',
           weekHeader: true,
           // Common settings

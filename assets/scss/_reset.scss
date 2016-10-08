@@ -89,7 +89,10 @@ input[type="button"], button,{
     -webkit-appearance: none;
 }
 input[type="text"],
-input[type="password"]{
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="search"]{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -129,3 +132,10 @@ input{
 .color-title{
     color: $color-title;
 }
+.color-text{
+    color: $color-text-gray;
+}
+.color-text-light{
+    color: #bbb;
+}
+

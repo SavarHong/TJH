@@ -37,7 +37,7 @@ $(function () {
         });
     });
 
-    //操作表
+    //客服电话弹窗
     $(document).on("pageInit", ".page", function(e, id, page) {
         $(this).on('click', '.actions-phone', function () {
             var phoneHtml = "<a class='phone-box' href='tel:0592-57156278'>"
@@ -64,11 +64,24 @@ $(function () {
         $(this).on('click', '.div-collapse-operation', function(){
             if($(this).prev().hasClass("div-collapse")){
                 $(this).prev().removeClass("div-collapse");
-                $(this).children().attr("class", "icon icon-arrow-top");
+                if($(this).hasClass("tip-info-text")){
+                    var modalMark = "<div class='modal-overlay modal-overlay-visible'></div>";
+                    $(page).append(modalMark);
+                    $(".bar-footer").css("z-index", "10601");
+                }
             }
             else{
                 $(this).prev().addClass("div-collapse");
-                $(this).children().attr("class", "icon icon-arrow-bottom");
+                if($(this).hasClass("tip-info-text")){
+                    $(".modal-overlay").remove();
+                    $(".bar-footer").removeAttr("style");
+                }
+            }
+            if($(this).find(".icon").hasClass("icon-arrow-bottom")){
+                $(this).find(".icon").attr("class", "icon icon-arrow-top");
+            }
+            else{
+                $(this).find(".icon").attr("class", "icon icon-arrow-bottom");
             }
         });
     });
@@ -83,6 +96,28 @@ $(function () {
             else{
                 $(this).removeClass("status-active");
             }
+        });
+    });
+
+    // 预定页预定按钮激活
+    $(document).on("pageInit", "#page-reserve", function(e, id, page) {
+        var reserve = $(".reserve-info");
+        var reserveInput = reserve.find(".type-info-input").children("input");
+        var reserveLength = reserveInput.length;
+        reserve.on("change", "input", function(){
+            if(reserve.find(".type-info-input").children("input[type='text']").val() != "" && reserve.find(".type-info-input").children("input[type='number']").val() != ""){
+                $(page).find(".footer-tip").removeClass("disabled");
+            }
+            else{
+                $(page).find(".footer-tip").addClass("disabled");
+            }
+        });
+    });
+
+    // 打开日历，其他input失焦
+    $(document).on("pageInit", ".page", function(e, id, page) {
+        $(this).on("click", "input[data-toggle='date']", function(){
+            $("input").blur();
         });
     });
 
