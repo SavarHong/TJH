@@ -1,7 +1,6 @@
 @charset "utf-8";
 // module 组件
 
-
 /* 首页 样式  */
 // nav
 .content-nav{
@@ -90,6 +89,23 @@
         a{
             display: block;
         }
+        .title{
+            font-size: rem-calc(30);
+            color: #333;
+            padding: rem-calc(25 0 15);
+            .tag{
+                font-size: rem-calc(20);
+                color: #fff;
+                height: rem-calc(30);
+                line-height: rem-calc(30);
+                padding:rem-calc(0 10);
+                text-align: center;
+                margin-right: rem-calc(20);
+                border-radius: rem-calc(5);
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
         .photo{
             position: relative;
             font-size: 0;
@@ -172,6 +188,7 @@
 }
 .content-main-info{
     border-top: 0;
+    margin-bottom: rem-calc(10);
     .content-title{
         border-bottom: 1px solid #e6e6e6;
     }
@@ -236,7 +253,7 @@
     padding: rem-calc(20 0 10);
     .content-type-title{
         font-size: rem-calc(22);
-        padding: rem-calc(15 30);
+        padding: rem-calc(0 30 15);
     }
     .content-type-description{
         padding: rem-calc(50 20);
@@ -356,4 +373,24 @@
             }
         }
     }
+    .content-type-filter{
+        padding: rem-calc(20 4 10 12);
+    }
 }
+//发现
+.content-inner{
+    .list-league-construction{
+        padding: rem-calc(0 30);
+        .list-item{
+            position: relative;
+            @include hairline(bottom, #e6e6e6);
+            .text{
+                padding-top: rem-calc(15);
+            }
+            &:last-child{
+                @include hairline-remove(bottom);
+            }
+        }
+    }
+}
+

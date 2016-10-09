@@ -514,7 +514,7 @@
     float: left;
     width: 25%;
     height: 2.2rem;
-    line-height: 2rem;  //不知道为什么 2.2rem 无法上下对齐；
+    line-height: 2.2rem;  //不知道为什么 2.2rem 无法上下对齐；
   }
   .current-month-value, .current-year-value {
     float: left;
@@ -525,3 +525,12 @@
   }
 }
 
+/* Tabs Content 样式 */
+.tabs{
+    .tab{
+        display: none;
+        &.active{
+            display: block;
+        }
+    }
+}

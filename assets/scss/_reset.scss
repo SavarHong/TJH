@@ -138,4 +138,26 @@ input{
 .color-text-light{
     color: #bbb;
 }
+/* tag 样式 */
+.tag-green{
+    background-color: $color-primary;
+}
+.tag-red{
+    background-color: $color-danger;
+}
+.tag-orange{
+    background-color: $color-warning;
+}
+.tag-blue{
+    background-color: $color-blue;
+}
+.tag-baby-blue{
+    background-color: $color-baby-blue;
+}
+.tag-pink{
+    background-color: $color-pink;
+}
+.tag-purple{
+    background-color: $color-purple;
+}
 
