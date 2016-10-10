@@ -89,6 +89,7 @@ $(function () {
     // 点击激活
     $(document).on("pageInit", ".page", function(e, id, page) {
         var node = $.tjhConfig.clickStatusActive;
+        var radioType = $.tjhConfig.radioType;
         $(this).on('click', node, function(){
             if(!$(this).hasClass("status-active")){
                 $(this).addClass("status-active");
@@ -96,6 +97,10 @@ $(function () {
             else{
                 $(this).removeClass("status-active");
             }
+        });
+        $(this).on('click', radioType, function(){
+            $(this).closest(".btn-radio-group").find(radioType).removeClass("status-active");
+            $(this).addClass("status-active");
         });
     });
 
@@ -118,6 +123,17 @@ $(function () {
     $(document).on("pageInit", ".page", function(e, id, page) {
         $(this).on("click", "input[data-toggle='date']", function(){
             $("input").blur();
+        });
+    });
+
+    // 找方案条件过滤重置
+    $(document).on("pageInit", ".page", function(e, id, page) {
+        var radioType = $.tjhConfig.radioType;
+        $(this).on("click", ".bar-nav #btn-reset", function(){
+            $(".content-type-filter").each(function(){
+                $(this).children().find(radioType).removeClass("status-active");
+                $(this).children().first().find(radioType).addClass("status-active");
+            });
         });
     });
 

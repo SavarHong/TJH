@@ -81,3 +81,22 @@
         }
     }
 }
+
+// filter button
+.filter-btn{
+    display: block;
+    height: rem-calc(64);
+    width: auto;
+    font-size: rem-calc(30);
+    border: 1px solid #e5e5e5;
+    border-radius: rem-calc(8);
+    text-align: center;
+    line-height: rem-calc(64);
+    color: $color-text-gray;
+    white-space: nowrap;
+    &.status-active{
+        color: #fff;
+        background-color: $color-primary;
+        border: 1px solid $color-primary;
+    }
+}

@@ -51,12 +51,12 @@
                     <a href="发现.html" class="discovery">
                         <i class="icon icon-discovery"></i>
                         <p>发现</p></a>
-                    <a href="#" class="mine">
+                    <a href="我的-首页.html" class="mine">
                         <i class="icon icon-mine"></i>
                         <p>我的</p></a>
                 </div>
             </div>
-            <div class="content">
+            <div class="content infinite-scroll" data-distance="100">
                 <section class="content-banner">
                     <div class="swiper-container" data-space-between='10' data-pagination=".swiper-pagination">
                         <div class="swiper-wrapper">
@@ -154,6 +154,16 @@
                         </ul>
                     </div>
                 </section>
+                <!-- 加载提示符 -->
+                <div class="infinite-scroll-preloader">
+                    <div class="preloader">
+                        <div class="preloader-loading">
+                            <div class="preloader-loading-bounce1"></div>
+                            <div class="preloader-loading-bounce2"></div>
+                            <div class="preloader-loading-bounce3"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -161,4 +171,67 @@
 <script type="text/javascript" src="../assets/js/zepto.min.js"></script>
 <script type="text/javascript" src="../assets/js/tjhjs.min.js"></script>
 <script type="text/javascript" src="../assets/js/initjs.js"></script>
+<script type="text/javascript">
+    $(function() {
+        // 加载flag
+        var loading = false;
+        // 最多可加载的条目
+        var maxItems = 10;
+
+        // 每次加载添加多少条目
+        var itemsPerLoad = 5;
+
+        function addItems(number) {
+            // 生成新条目的HTML
+            var html = '';
+            for (var i = 1; i <= number; i++) {
+                html += "<li class='list-item'>"
+                                + "<a href='产品详情.html'>"
+                                    + "<div class='photo'>"
+                                        + "<img src='../assets/img/product/index-product1.png' class='img-all'>"
+                                        + "<span class='tag'>活动精选</span>"
+                                    + "</div>"
+                                    + "<div class='info'>"
+                                        + "<div class='title'>骑行集结号</div>"
+                                        + "<div class='price'>"
+                                            + "<span>500</span>/人"
+                                        + "</div>"
+                                    + "</div>"
+                                    + "<p class='text'>"
+                                        + "较早混迹于骑行圈的人也许都认识跟头这个人，也都比较熟悉“骑行者”网站，那里提供了大量骑友们的骑行经历，也提供有众多的长途骑行路线和经验技巧。"
+                                    + "</p>"
+                                + "</a>"
+                            "</li>";
+            }
+            // 添加新条目
+            $('.infinite-scroll .content-list-box ul').append(html);
+        }
+        // 注册'infinite'事件处理函数
+        $(document).on('infinite', '.infinite-scroll', function() {
+
+            // 如果正在加载，则退出
+            if (loading) return;
+
+            // 设置flag
+            loading = true;
+
+            // 模拟1s的加载过程
+            setTimeout(function() {
+                // 重置加载flag
+                loading = false;
+
+                if ($('.list-item').length >= maxItems) {
+                    // 加载完毕，则注销无限加载事件，以防不必要的加载
+                    $.detachInfiniteScroll($('.infinite-scroll'));
+                    // 隐藏加载提示符
+                    $('.infinite-scroll-preloader').html("我是有底线的");
+                    return;
+                }
+
+                // 添加新条目
+                addItems(itemsPerLoad);
+            }, 1000);
+        });
+    });
+</script>
 </html>

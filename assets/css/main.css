@@ -574,6 +574,33 @@ input {
   z-index: 20;
 }
 
+/* preloader */
+.preloader-loading {
+  margin: 0.25rem auto 1.25rem;
+  width: 40px;
+  text-align: center;
+}
+.preloader-loading div {
+  width: 8px;
+  height: 8px;
+  background-color: #999;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: three-bounce-delay 1.4s infinite ease-in-out;
+  animation: three-bounce-delay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.preloader-loading .preloader-loading-bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.preloader-loading .preloader-loading-bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
 @font-face {
   font-family: "iconfont";
   src: url("../fonts/iconfont.woff") format("woff"), url("../fonts/iconfont.ttf") format("truetype"), url("../fonts/iconfont.svg#iconfont") format("svg")
@@ -887,6 +914,24 @@ input {
 }
 .btn-group .btn-rounded:last-child {
   border-radius: 0 1.25rem 1.25rem 0;
+}
+
+.filter-btn {
+  display: block;
+  height: 1.6rem;
+  width: auto;
+  font-size: 0.75rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.2rem;
+  text-align: center;
+  line-height: 1.6rem;
+  color: #999;
+  white-space: nowrap;
+}
+.filter-btn.status-active {
+  color: #fff;
+  background-color: #06cc93;
+  border: 1px solid #06cc93;
 }
 
 .modal-overlay, .preloader-indicator-overlay {
@@ -1959,7 +2004,7 @@ input {
 .content-inner .list-item a {
   display: block;
 }
-.content-inner .list-item .title {
+.content-inner .list-item a > .title {
   font-size: 0.75rem;
   color: #333;
   padding: 0.625rem 0 0.375rem;
@@ -2263,7 +2308,23 @@ input {
   padding-top: 0;
 }
 .content-wrap .content-type-filter {
-  padding: 0.5rem 0.1rem 0.25rem 0.3rem;
+  padding: 0.5rem 0 0.25rem;
+  font-size: 0;
+  overflow: hidden;
+}
+.content-wrap .content-type-filter .filter-btn-wrap {
+  width: 25%;
+  padding: 0 0.15rem 0.25rem;
+  display: inline-block;
+}
+.content-wrap .content-type-filter .filter-btn-wrap .filter-btn {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content-operation {
+  padding: 0.5rem;
 }
 
 .content-inner .list-league-construction {
@@ -2307,4 +2368,88 @@ input {
 }
 .content-inner .list-league-construction .list-item:last-child:after {
   display: none;
+}
+
+/* fadeIn 的样式  */
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fade-in {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+/* bounce 的样式  */
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+}
+
+@-webkit-keyframes three-bounce-delay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes three-bounce-delay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.three-bounce-delay {
+  -webkit-animation-name: three-bounce-delay;
+  animation-name: three-bounce-delay;
 }

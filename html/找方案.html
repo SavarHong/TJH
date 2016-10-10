@@ -16,13 +16,13 @@
 </head>
 <body>
     <div class="page-wrap">
-        <div class="page" id="page-reserve">
+        <div class="page">
             <header class="bar bar-nav">
                 <a href="#" class="bar-menu menu-left">
                     <i class="icon icon-arrow-left"></i>
                 </a>
-                <a href="#" class="bar-menu menu-right">
-                    重置
+                <a href="#" class="bar-menu menu-right" id="btn-reset">
+                    <span class="color-primary">重置</span>
                 </a>
                 <div class="bar-center">
                     <h1>搜索企业团建方案</h1>
@@ -32,95 +32,85 @@
                 <section class="content-wrap">
                     <h5 class="content-type-title color-title">活动类型：</h5>
                     <div class="content-inner">
-                        <div class="content-type-filter">
-                            <span class="btn-outline">不限</span>
+                        <div class="content-type-filter btn-radio-group">
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn status-active" data-radio>不限</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>旅行式</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>拓展培训</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>聚会沙龙</a>
+                            </span>
                         </div>
                     </div>
                 </section>
                 <section class="content-wrap">
-                    <h5 class="content-type-title color-title">保险信息</h5>
+                    <h5 class="content-type-title color-title">出行距离：</h5>
                     <div class="content-inner">
-                        <div class="content-type-insurance">
-                            <ul>
-                                <li>
-                                    <div class="insurance-title">意外险1：单价 &yen;10/人</div>
-                                    <div class="insurance-content">
-                                        <div class="insurance-info">
-                                            <div class="insurance-text">太平洋意外保险16款</div>
-                                            <div class="insurance-checkbox"><i class="icon icon-check"></i></div>
-                                        </div>
-                                        <div class="insurance-description div-collapse">
-                                            <p>保险类型：意外险</p>
-                                            <p>
-                                                保险描述：<br>
-                                                1. 意外伤害<br>
-                                                2. 投保须知
-                                            </p>
-                                            <p>
-                                                投保须知（特别说明）：<br>
-                                                1. 意外伤害<br>
-                                                2. 投保须知
-                                            </p>
-                                        </div>
-                                        <div class="div-collapse-operation arrow-top">
-                                            <i class="icon icon-arrow-bottom"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="insurance-title">意外险2：单价 &yen;20/人</div>
-                                    <div class="insurance-content">
-                                        <div class="insurance-info">
-                                            <div class="insurance-text">太平洋意外保险16款</div>
-                                            <div class="insurance-checkbox"><i class="icon icon-check"></i></div>
-                                        </div>
-                                        <div class="insurance-description div-collapse">
-                                            <p>保险类型：意外险</p>
-                                            <p>
-                                                保险描述：<br>
-                                                1. 意外伤害<br>
-                                                2. 投保须知
-                                            </p>
-                                            <p>
-                                                投保须知（特别说明）：<br>
-                                                1. 意外伤害<br>
-                                                2. 投保须知
-                                            </p>
-                                        </div>
-                                        <div class="div-collapse-operation arrow-top">
-                                            <i class="icon icon-arrow-bottom"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                        <div class="content-type-filter btn-radio-group">
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn status-active" data-radio>不限</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>周边短途</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>国内长途</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>港澳台</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>境外出游</a>
+                            </span>
                         </div>
                     </div>
                 </section>
                 <section class="content-wrap">
-                    <h5 class="content-type-title color-title">预订人信息</h5>
+                    <h5 class="content-type-title color-title">活动天数：</h5>
                     <div class="content-inner">
-                        <div class="content-type-info customer-info">
-                            <ul>
-                                <li>
-                                    <div class="type-info-wrap">
-                                        <div class="type-info-title">姓名 <span class="color-danger">*</span></div>
-                                        <div class="type-info-input">
-                                            <input type="text" value="李小龙">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="type-info-wrap">
-                                        <div class="type-info-title">手机 <span class="color-danger">*</span></div>
-                                        <div class="type-info-input">
-                                            <input type="text" value="15858588858">
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                        <div class="content-type-filter btn-radio-group">
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn status-active" data-radio>不限</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>1天内</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>2-5天</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>5天以上</a>
+                            </span>
                         </div>
                     </div>
                 </section>
+                <section class="content-wrap">
+                    <h5 class="content-type-title color-title">人均价格区间：</h5>
+                    <div class="content-inner">
+                        <div class="content-type-filter btn-radio-group">
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn status-active" data-radio>不限</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>200以下</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>201~500</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>500以上</a>
+                            </span>
+                        </div>
+                    </div>
+                </section>
+                <div class="content-operation">
+                    <div class="btn">确认</div>
+                </div>
             </div>
         </div>
     </div>
