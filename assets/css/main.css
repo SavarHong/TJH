@@ -2370,6 +2370,43 @@ input {
   display: none;
 }
 
+/* 我的 样式 */
+.content-user-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.75rem;
+  color: #333;
+  height: 4.65rem;
+}
+.content-user-box .user-avatar {
+  width: 4.75rem;
+  padding: 0 0.75rem;
+  font-size: 0;
+}
+.content-user-box .user-avatar img {
+  border-radius: 0.25rem;
+}
+.content-user-box .user-name {
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.content-user-box .user-arrow {
+  padding-right: 0.875rem;
+}
+.content-user-box .user-arrow .icon {
+  color: #999;
+}
+
 /* fadeIn 的样式  */
 @-webkit-keyframes fade-in {
   0% {
