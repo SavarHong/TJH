@@ -268,6 +268,8 @@
             border-bottom: 1px solid #e6e6e6;
             div{
                 @include flexbox();
+                -webkit-align-items:center;
+                -moz-align-items:center;
                 align-items:center;
             }
             .type-info-title{
@@ -305,6 +307,8 @@
                 padding: rem-calc(15 0 20);
                 div{
                     @include flexbox();
+                    -webkit-align-items:center;
+                    -moz-align-items:center;
                     align-items:center;
                 }
                 .insurance-text{
@@ -422,7 +426,131 @@
     .user-arrow{
         padding-right: rem-calc(35);
         .icon{
+            font-size: rem-calc(28);
             color: $color-text-gray;
+        }
+    }
+}
+.content-user-behavior{
+    .user-behavior-top{
+        height: rem-calc(88);
+        padding: rem-calc(0 30);
+        a{
+            @include flexbox();
+            width: 100%;
+            height: 100%;
+            -webkit-align-items:center;
+            -moz-align-items:center;
+            align-items:center;
+            position: relative;
+            @include hairline(bottom, #e6e6e6);
+        }
+        .user-behavior-icon{
+            width: rem-calc(102);
+            padding-left: rem-calc(20);
+            .icon{
+                width: rem-calc(48);
+                height: rem-calc(48);
+                text-align: center;
+                line-height: rem-calc(48);
+                border-radius: rem-calc(6);
+                color: #fff;
+                font-size: rem-calc(36);
+                display: block;
+            }
+        }
+        .user-behavior-type{
+            -webkit-flex: 1;
+            -moz-flex: 1;
+            flex: 1;
+            font-size: rem-calc(30);
+            color: $color-title;
+        }
+        .user-behavior-arrow{
+            padding-right: rem-calc(5);
+            .icon{
+                font-size: rem-calc(28);
+                color: $color-text-gray;
+            }
+        }
+    }
+    .user-behavior-bottom{
+        @include flexbox();
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        box-pack: justify;
+        height: rem-calc(100);
+        a{
+            -webkit-flex: 1;
+            -moz-flex: 1;
+            flex: 1;
+            text-align: center;
+            font-size: rem-calc(30);
+            color: $color-title;
+            height: 100%;
+            display: block;
+            padding-top: rem-calc(12);
+            &:first-child{
+                border-right: 1px solid #e6e6e6;
+            }
+            .num{
+                font-size: rem-calc(24);
+                color: $color-text-gray;
+            }
+        }
+    }
+}
+.content-core-entry{
+    li{
+        height: rem-calc(88);
+        padding: rem-calc(0 30);
+        &:last-child{
+            .core-entry-item{
+                @include hairline-remove(bottom);
+            }
+        }
+    }
+    .core-entry-item{
+        @include flexbox();
+        width: 100%;
+        height: 100%;
+        -webkit-align-items:center;
+        -moz-align-items:center;
+        align-items:center;
+        position: relative;
+        @include hairline(bottom, #e6e6e6);
+        .core-entry-icon{
+            width: rem-calc(102);
+            padding-left: rem-calc(20);
+            .icon{
+                width: rem-calc(48);
+                height: rem-calc(48);
+                text-align: center;
+                line-height: rem-calc(48);
+                border-radius: rem-calc(6);
+                color: #fff;
+                font-size: rem-calc(36);
+                display: block;
+            }
+        }
+        .core-entry-type{
+            -webkit-flex: 1;
+            -moz-flex: 1;
+            flex: 1;
+            font-size: rem-calc(30);
+            color: $color-title;
+        }
+        .core-entry-content{
+            font-size: rem-calc(30);
+            color: $color-text-gray;
+            padding-right: rem-calc(20);
+        }
+        .core-entry-arrow{
+            padding-right: rem-calc(5);
+            .icon{
+                font-size: rem-calc(28);
+                color: $color-text-gray;
+            }
         }
     }
 }

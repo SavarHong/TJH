@@ -14,7 +14,7 @@
     swipePanel: "left", //滑动打开侧栏
     swipePanelOnlyClose: false,  //只允许滑动关闭，不允许滑动打开侧栏
     pushAnimationDuration: 400,  //不要动这个，这是解决安卓 animationEnd 事件无法触发的bug
-    clickStatusActive: ".insurance-info, .filter-btn",
+    clickStatusActive: ".click-status",
     radioType: "[data-radio]"
   };
 

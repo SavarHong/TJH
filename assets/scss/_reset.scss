@@ -139,24 +139,49 @@ input{
     color: #bbb;
 }
 /* tag 样式 */
-.tag-green{
+.tag-green,
+.icon-green{
     background-color: $color-primary;
 }
-.tag-red{
+.tag-green-dark,
+.icon-green-dark{
+    background-color: $color-success;
+}
+.tag-red,
+.icon-red{
     background-color: $color-danger;
 }
-.tag-orange{
+.tag-orange,
+.icon-orange{
     background-color: $color-warning;
 }
-.tag-blue{
+.tag-blue,
+.icon-blue{
     background-color: $color-blue;
 }
-.tag-baby-blue{
+.tag-baby-blue,
+.icon-baby-blue{
     background-color: $color-baby-blue;
 }
-.tag-pink{
+.tag-pink,
+.icon-pink{
     background-color: $color-pink;
 }
-.tag-purple{
+.tag-purple,
+.icon-purple{
     background-color: $color-purple;
+}
+.tag-yellow,
+.icon-yellow{
+    background-color: $color-yellow;
+}
+.tag-pink-light,
+.icon-pink-light{
+    background-color: $color-pink-light;
+}
+// 点击状态
+.hover-status{
+    &:active{
+        background-color: #eee;
+    }
 }
