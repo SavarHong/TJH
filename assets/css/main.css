@@ -829,6 +829,10 @@ input {
   content: "\e92d";
 }
 
+.icon-circle:before {
+  content: "\e933";
+}
+
 .button-type {
   padding: 0.5rem;
 }
@@ -2592,6 +2596,15 @@ input {
 .content-core-entry li:last-child .core-entry-item:after {
   display: none;
 }
+.content-core-entry li.core-entry-avatar {
+  height: 4.65rem;
+}
+.content-core-entry li.core-entry-avatar .core-entry-content {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
 .content-core-entry .core-entry-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2662,7 +2675,13 @@ input {
 .content-core-entry .core-entry-item .core-entry-content {
   font-size: 0.75rem;
   color: #999;
-  padding-right: 0.5rem;
+  margin-right: 0.5rem;
+}
+.content-core-entry .core-entry-item .core-entry-content .icon-circle {
+  color: #ff000c;
+  font-size: 0.4rem;
+  display: inline-block;
+  vertical-align: middle;
 }
 .content-core-entry .core-entry-item .core-entry-arrow {
   padding-right: 0.125rem;
@@ -2670,6 +2689,42 @@ input {
 .content-core-entry .core-entry-item .core-entry-arrow .icon {
   font-size: 0.7rem;
   color: #999;
+}
+
+.core-entry-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  height: 2.2rem;
+}
+.core-entry-input input {
+  font-size: 0.75rem;
+  color: #333;
+  padding: 0 0.75rem;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+}
+.core-entry-input .btn-reset {
+  width: 2.2rem;
+  height: 100%;
+  line-height: 2.2rem;
+  text-align: center;
+}
+.core-entry-input .btn-reset .icon {
+  color: #999;
+  font-size: 0.45rem;
+  display: none;
+}
+
+.core-entry-tips {
+  font-size: 0.5rem;
+  color: #999;
+  padding: 0.375rem 0.75rem;
 }
 
 /* fadeIn 的样式  */

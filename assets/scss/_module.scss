@@ -509,6 +509,15 @@
                 @include hairline-remove(bottom);
             }
         }
+        &.core-entry-avatar{
+            height: rem-calc(186);
+            .core-entry-content{
+                width: rem-calc(130);
+                height: rem-calc(130);
+                border-radius: rem-calc(10);
+                overflow: hidden;
+            }
+        }
     }
     .core-entry-item{
         @include flexbox();
@@ -543,7 +552,13 @@
         .core-entry-content{
             font-size: rem-calc(30);
             color: $color-text-gray;
-            padding-right: rem-calc(20);
+            margin-right: rem-calc(20);
+            .icon-circle{
+                color: $color-danger;
+                font-size: rem-calc(16);
+                display: inline-block;
+                vertical-align: middle;
+            }
         }
         .core-entry-arrow{
             padding-right: rem-calc(5);
@@ -553,4 +568,33 @@
             }
         }
     }
+}
+.core-entry-input{
+    @include flexbox();
+    height: rem-calc(88);
+    input{
+        font-size: rem-calc(30);
+        color: $color-title;
+        padding: rem-calc(0 30);
+        -webkit-flex: 1;
+        -moz-flex: 1;
+        flex: 1;
+        height: 100%;
+    }
+    .btn-reset{
+        width: rem-calc(88);
+        height: 100%;
+        line-height: rem-calc(88);
+        text-align: center;
+        .icon{
+            color: $color-text-gray;
+            font-size: rem-calc(18);
+            display: none;
+        }
+    }
+}
+.core-entry-tips{
+    font-size: rem-calc(20);
+    color: $color-text-gray;
+    padding: rem-calc(15 30);
 }
