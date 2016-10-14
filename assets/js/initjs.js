@@ -139,17 +139,17 @@ $(function () {
 
     // 输入框显示清空按钮
     $(document).on("pageInit", ".page", function(e, id, page) {
-        var node = ".input-operation";
-        $(this).on('change', node, function(){
-            if(!$(this).val() != ""){
+        $(this).on("keyup", ".input-operation", function(){
+            if($(this).val() != ""){
                 $(this).next().show();
             }
             else{
                 $(this).next().hide();
             }
         });
-        $(this).on("blur", node, function(){
-            $(this).next().hide();
+        $(this).on("click", "[data-operation-reset]", function(){
+            $(this).prev().val("");
+            $(this).hide();
         });
     });
 

@@ -2714,11 +2714,11 @@ input {
   height: 100%;
   line-height: 2.2rem;
   text-align: center;
+  display: none;
 }
 .core-entry-input .btn-reset .icon {
   color: #999;
   font-size: 0.45rem;
-  display: none;
 }
 
 .core-entry-tips {

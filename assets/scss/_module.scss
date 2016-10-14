@@ -586,10 +586,10 @@
         height: 100%;
         line-height: rem-calc(88);
         text-align: center;
+        display: none;
         .icon{
             color: $color-text-gray;
             font-size: rem-calc(18);
-            display: none;
         }
     }
 }
