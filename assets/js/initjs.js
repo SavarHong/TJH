@@ -59,6 +59,45 @@ $(function () {
         });
     });
 
+    //性别选择弹窗
+    $(document).on("pageInit", ".page", function(e, id, page) {
+        $(this).on('click', '.core-entry-gender', function () {
+            var isGender = "";
+            var maleHtml = "<label for='gender-male' class='hover-status gender-box'>"
+                                        + "<span class='gender-type'>男</span>"
+                                        + "<input type='radio' name='gender' id='gender-male'>"
+                                        + "<span class='gender-radio'></span>"
+                                    + "</label>";
+            var femaleHtml = "<label for='gender-female' class='hover-status gender-box'>"
+                                        + "<span class='gender-type'>女</span>"
+                                        + "<input type='radio' name='gender' id='gender-female'>"
+                                        + "<span class='gender-radio'></span>"
+                                    + "</label>";
+            var buttons = [
+                {
+                    text: '性别',
+                    label: true
+                },
+                {
+                    text: maleHtml,
+                    extend: 'list-item',
+                    onClick: function(e){
+                        isGender = "gender-male";
+                    }
+                },
+                {
+                    text: femaleHtml,
+                    extend: 'list-item',
+                    onClick: function(e){
+                        isGender = "gender-female";
+                    }
+                }
+            ];
+            var groups = [buttons];
+            $.actions(groups);
+        });
+    });
+
     // 层折叠
     $(document).on("pageInit", ".page", function(e, id, page) {
         $(this).on('click', '.div-collapse-operation', function(){
