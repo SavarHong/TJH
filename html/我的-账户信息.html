@@ -62,7 +62,7 @@
                                     </a>
                                 </li>
                                 <li class="hover-status">
-                                    <a class="core-entry-item" href="#">
+                                    <a class="core-entry-item" href="我的-账户信息-更改地区.html">
                                         <span class="core-entry-type">地区</span>
                                         <span class="core-entry-content">福建-厦门</span>
                                         <span class="core-entry-arrow"><i class="icon icon-arrow-right"></i></span>
@@ -126,7 +126,7 @@
                         <div class="content-core-entry">
                             <ul>
                                 <li class="hover-status">
-                                    <a class="core-entry-item" href="#">
+                                    <a class="core-entry-item" href="我的-账户信息-修改密码.html">
                                         <span class="core-entry-type">登录密码</span>
                                         <span class="core-entry-content">修改</span>
                                         <span class="core-entry-arrow"><i class="icon icon-arrow-right"></i></span>
@@ -143,4 +143,51 @@
 <script type="text/javascript" src="../assets/js/zepto.min.js"></script>
 <script type="text/javascript" src="../assets/js/tjhjs.min.js"></script>
 <script type="text/javascript" src="../assets/js/initjs.js"></script>
+<script type="text/javascript">
+    $(document).on('click', '.core-entry-gender', function (isGender) {
+        var isChecked = "";
+        if(isGender == "gender-male"){
+            isChecked = "checked";
+        }
+        else if(isGender == "gender-female"){
+            isChecked = "checked";
+        }
+        var maleHtml = "<label for='gender-male' class='hover-status gender-box'>"
+                                    + "<span class='gender-type'>男</span>"
+                                    + "<input type='radio' name='gender' id='gender-male'"
+                                        + isChecked
+                                    + ">"
+                                    + "<span class='gender-radio'></span>"
+                                + "</label>";
+        var femaleHtml = "<label for='gender-female' class='hover-status gender-box'>"
+                                    + "<span class='gender-type'>女</span>"
+                                    + "<input type='radio' name='gender' id='gender-female'"
+                                        + isChecked
+                                    + ">"
+                                    + "<span class='gender-radio'></span>"
+                                + "</label>";
+        var buttons = [
+            {
+                text: '性别',
+                label: true
+            },
+            {
+                text: maleHtml,
+                extend: 'list-item',
+                onClick: function(e){
+                    isGender = "gender-male";
+                }
+            },
+            {
+                text: femaleHtml,
+                extend: 'list-item',
+                onClick: function(e){
+                    isGender = "gender-female";
+                }
+            }
+        ];
+        var groups = [buttons];
+        $.actions(groups);
+    });
+</script>
 </html>

@@ -53,6 +53,7 @@
     width: $width;
     font-size: $fontsize;
     background-color: $color;
+    border: 0;
     border-radius: rem-calc(8);
     text-align: center;
     line-height: $height;
@@ -85,6 +86,7 @@
     text-align: center;
     line-height: $height;
     color: $color;
+    background-color: #fff;
     white-space: nowrap;
     &:active,
     &:focus {
@@ -247,4 +249,16 @@
         position: absolute;
         right: $dis;
     }
+}
+
+// labels
+@mixin label-bg($width, $height, $color, $fontsize){
+    font-size: $fontsize;
+    color: #fff;
+    width: $width;
+    height: $height;
+    line-height: $height;
+    text-align: center;
+    background-color: $color;
+    border-radius: 5px;
 }

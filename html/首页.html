@@ -173,6 +173,13 @@
 <script type="text/javascript" src="../assets/js/initjs.js"></script>
 <script type="text/javascript">
     $(function() {
+        //首页banner滚动
+        $(".content-banner > .swiper-container").swiper({
+            loop: true,
+            autoplay: 3000,
+            autoplayDisableOnInteraction: false
+        });
+
         // 加载flag
         var loading = false;
         // 最多可加载的条目

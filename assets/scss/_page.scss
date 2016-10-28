@@ -35,6 +35,9 @@
 .bar-nav ~ .content{
     top: rem-calc(88);
 }
+.bar-sub-nav ~ .content{
+    top: rem-calc(176);
+}
 .bar-footer ~ .content{
     bottom: rem-calc(98);
 }
@@ -116,6 +119,10 @@
     }
     &.bar-nav{
         top: 0;
+        border-bottom: rem-calc(2) solid #e5e5e5;
+    }
+    &.bar-sub-nav{
+        top: rem-calc(88);
         border-bottom: rem-calc(2) solid #e5e5e5;
     }
     &.bar-footer{
