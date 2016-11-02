@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SUIM: Build mobile apps with simple HTML, CSS, and JS components.">
+    <meta name="author" content="Savar">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>订单支付</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="icon" href="">
+</head>
+<body>
+    <div class="page-wrap">
+        <div class="page">
+            <header class="bar bar-nav">
+                <a href="我的-活动.html" class="bar-menu menu-left">
+                    <i class="icon icon-arrow-left"></i>
+                </a>
+                <a href="#" class="bar-menu menu-right">
+                </a>
+                <div class="bar-center">
+                    <h1>产品订单</h1>
+                </div>
+            </header>
+            <div class="content">
+                <section class="content-wrap">
+                    <div class="content-inner">
+                        <div class="content-type-info content-payment-info">
+                            <ul>
+                                <li>
+                                    <div class="type-info-wrap">
+                                        <div class="type-info-title">订单编号：L2016073001</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="type-info-wrap div-collapse-operation">
+                                        <div class="type-info-title">应付总额：<span class="color-danger">&yen;35,100.00</span></div>
+                                        <div class="type-info-arrow">
+                                            <span class="color-primary">费用明细</span>
+                                            <i class="icon icon-arrow-bottom"></i>
+                                        </div>
+                                    </div>
+                                    <div class="content-type-info tip-info-detail div-collapse">
+                                        <ul>
+                                            <li>
+                                                <div class="type-info-wrap">
+                                                    <div class="type-info-title">活动费：</div>
+                                                    <div class="type-info-text">
+                                                        <div class="color-danger">&yen; 35000</div>
+                                                        <div class="color-text-light">&yen; 3500/人X10</div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="type-info-wrap">
+                                                    <div class="type-info-title">保险费：</div>
+                                                    <div class="type-info-text">
+                                                        <div class="color-danger">&yen; 30</div>
+                                                        <div class="color-text-light">意外险1：&yen; 10/人X10</div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="content-wrap">
+                    <h5 class="content-type-title color-text">请选择支付方式</h5>
+                    <div class="content-inner">
+                        <div class="content-type-info content-payment-info">
+                            <ul>
+                                <li class="hover-status">
+                                    <label class="type-info-wrap">
+                                        <div class="type-info-icon"><i class="icon icon-green-dark icon-weixin"></i></div>
+                                        <div class="type-info-title">微信</div>
+                                        <input type="radio" name="payment" id="payment-weixin">
+                                        <div class="type-info-radio"></div>
+                                    </label>
+                                </li>
+                                <li class="hover-status">
+                                    <label class="type-info-wrap">
+                                        <div class="type-info-icon"><i class="icon icon-alipay"></i></div>
+                                        <div class="type-info-title">支付宝</div>
+                                        <input type="radio" name="payment" id="payment-alipay">
+                                        <div class="type-info-radio"></div>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content-operation">
+                        <div class="btn">支付</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../assets/js/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/tjhjs.min.js"></script>
+<script type="text/javascript" src="../assets/js/initjs.js"></script>
+<script type="text/javascript">
+    $(document).on('click','.tab-payment-none .btn-cancel-order', function () {
+        $.confirm("", "是否取消订单？",
+            function(){
+                // 点击确定触发回调函数
+                $.alert("订单取消成功！");
+        });
+    });
+</script>
+</html>

@@ -263,5 +263,8 @@
                     $.alert("订单取消成功！");
             });
         });
+        $(document).on('click','.tab-payment-done .btn-confirm-order', function () {
+            $.confirm("", "是否确认订单？");
+        });
 </script>
 </html>

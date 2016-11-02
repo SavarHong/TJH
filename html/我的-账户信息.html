@@ -54,8 +54,8 @@
                                         <span class="core-entry-arrow"><i class="icon icon-arrow-right"></i></span>
                                     </a>
                                 </li>
-                                <li class="hover-status core-entry-gender">
-                                    <a class="core-entry-item" href="#">
+                                <li class="hover-status core-entry-gender" data-gender="">
+                                    <a class="core-entry-item" href="javascript:void(0);">
                                         <span class="core-entry-type">性别</span>
                                         <span class="core-entry-content">请选择 <i class="icon icon-circle"></i></span>
                                         <span class="core-entry-arrow"><i class="icon icon-arrow-right"></i></span>
@@ -144,26 +144,26 @@
 <script type="text/javascript" src="../assets/js/tjhjs.min.js"></script>
 <script type="text/javascript" src="../assets/js/initjs.js"></script>
 <script type="text/javascript">
-    $(document).on('click', '.core-entry-gender', function (isGender) {
-        var isChecked = "";
+    $(document).on('click', '.core-entry-gender', function () {
+        var isGender = $(this).attr("data-gender");
         if(isGender == "gender-male"){
-            isChecked = "checked";
+            var checkedMale = "checked";
         }
         else if(isGender == "gender-female"){
-            isChecked = "checked";
+            var checkedFemale = "checked";
         }
         var maleHtml = "<label for='gender-male' class='hover-status gender-box'>"
                                     + "<span class='gender-type'>男</span>"
                                     + "<input type='radio' name='gender' id='gender-male'"
-                                        + isChecked
+                                        + checkedMale
                                     + ">"
                                     + "<span class='gender-radio'></span>"
                                 + "</label>";
         var femaleHtml = "<label for='gender-female' class='hover-status gender-box'>"
                                     + "<span class='gender-type'>女</span>"
                                     + "<input type='radio' name='gender' id='gender-female'"
-                                        + isChecked
-                                    + ">"
+                                        + checkedFemale
+                                    +">"
                                     + "<span class='gender-radio'></span>"
                                 + "</label>";
         var buttons = [
@@ -175,14 +175,14 @@
                 text: maleHtml,
                 extend: 'list-item',
                 onClick: function(e){
-                    isGender = "gender-male";
+                    $(".core-entry-gender").attr("data-gender", "gender-male");
                 }
             },
             {
                 text: femaleHtml,
                 extend: 'list-item',
                 onClick: function(e){
-                    isGender = "gender-female";
+                    $(".core-entry-gender").attr("data-gender", "gender-female");
                 }
             }
         ];

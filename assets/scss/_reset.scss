@@ -110,6 +110,9 @@ input[type="search"]{
 input{
     line-height: normal;
 }
+h5{
+    font-weight: normal;
+}
 .clearfix{
     @include clearfix();
 }

@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SUIM: Build mobile apps with simple HTML, CSS, and JS components.">
+    <meta name="author" content="Savar">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>定制需求</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="icon" href="">
+</head>
+<body>
+    <div class="page-wrap">
+        <div class="page">
+            <header class="bar bar-nav">
+                <a href="我的-首页.html" class="bar-menu menu-left">
+                    <i class="icon icon-arrow-left"></i>
+                </a>
+                <a href="#" class="bar-menu menu-right">
+                </a>
+                <div class="bar-center">
+                    <h1>定制需求</h1>
+                </div>
+            </header>
+            <div class="content">
+                <section class="content-wrap">
+                    <div class="content-inner content-order-wrap">
+                        <div class="content-order-title">
+                            <span class="order-title">需求编号：201607029001</span>
+                        </div>
+                        <div class="content-order-info">
+                            <ul>
+                                <li>
+                                    活动时间：07月24日 - 07月25日
+                                </li>
+                                <li>
+                                    出行人数：10
+                                </li>
+                                <li>
+                                    出行人数：1
+                                </li>
+                                <li>
+                                    人均预算：120
+                                </li>
+                                <li>
+                                    企业名称：厦门锐特信息技术有限公司
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="content-order-operation">
+                            <span class="order-total"></span>
+                            <span class="order-btn">
+                                <a class="button button-confirm btn-service actions-phone" data-phone="0592-57156278">
+                                    <i class="icon icon-service"></i> 客服
+                                </a>
+                                <a href="javascript:void(0);" class="button button-disabled btn-planned">活动方案准备中</a>
+                            </span>
+                        </div>
+                    </div>
+                </section>
+                <section class="content-wrap">
+                    <div class="content-inner content-order-wrap">
+                        <div class="content-order-title">
+                            <span class="order-title">需求编号：201607029002</span>
+                        </div>
+                        <div class="content-order-info">
+                            <ul>
+                                <li>
+                                    活动时间：07月24日 - 07月25日
+                                </li>
+                                <li>
+                                    出行人数：10
+                                </li>
+                                <li>
+                                    出行人数：1
+                                </li>
+                                <li>
+                                    人均预算：120
+                                </li>
+                                <li>
+                                    企业名称：厦门锐特信息技术有限公司
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="content-order-operation">
+                            <span class="order-total"></span>
+                            <span class="order-btn">
+                                <a class="button button-confirm btn-service actions-phone" data-phone="0592-57878788">
+                                    <i class="icon icon-service"></i> 客服
+                                </a>
+                                <a href="产品详情.html" class="button button-confirm btn-planned">打开活动方案</a>
+                            </span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../assets/js/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/tjhjs.min.js"></script>
+<script type="text/javascript" src="../assets/js/initjs.js"></script>
+<script type="text/javascript">
+    $(document).on('click','.tab-payment-none .btn-cancel-order', function () {
+        $.confirm("", "是否取消订单？",
+            function(){
+                // 点击确定触发回调函数
+                $.alert("订单取消成功！");
+        });
+    });
+    $(document).on('click','.tab-payment-done .btn-cancel-order', function () {
+        $.confirm("订单取消规则：订单取消规则内容订单取消规则内容", "取消该订单将只能返还订单金额的50%,是否取消订单？",
+            function(){
+                // 点击确定触发回调函数
+                $.alert("订单取消成功！");
+        });
+    });
+    $(document).on('click','.content-evaluate-operation .evaluate-level .icon-follow', function () {
+        var stars = $(this).attr('data-stars');
+        $(this).parent().children("i").attr("class", "icon icon-follow");
+        for(var i = 0; i<stars; i++){
+            $($('[data-stars]')[i]).addClass("star-light");
+        }
+    });
+</script>
+</html>

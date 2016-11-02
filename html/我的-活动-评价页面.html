@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SUIM: Build mobile apps with simple HTML, CSS, and JS components.">
+    <meta name="author" content="Savar">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>服务评价</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="icon" href="">
+</head>
+<body>
+    <div class="page-wrap">
+        <div class="page">
+            <header class="bar bar-nav">
+                <a href="我的-活动.html" class="bar-menu menu-left">
+                    <i class="icon icon-arrow-left"></i>
+                </a>
+                <a href="#" class="bar-menu menu-right">
+                </a>
+                <div class="bar-center">
+                    <h1>产品订单</h1>
+                </div>
+            </header>
+            <div class="bar bar-footer">
+                <div class="footer-menu">
+                    <a href="javascript:void(0);" class="footer-btn btn-evaluate">提交评价</a>
+                </div>
+            </div>
+            <div class="content">
+                <section class="content-wrap">
+                    <div class="content-inner content-order-wrap">
+                        <div class="content-order-title">
+                            <span class="order-title">订单编号：201607029002</span>
+                            <span class="order-type color-primary">已完成</span>
+                        </div>
+                        <div class="content-order-info">
+                            <ul>
+                                <li>
+                                    产品：<span class="color-primary">沙滩露营 / 21002334</span>
+                                </li>
+                                <li>
+                                    活动时间：07月24日 - 07月25日
+                                </li>
+                                <li>
+                                    目的地：漳州东山岛
+                                </li>
+                                <li>
+                                    人数：10&nbsp;&nbsp;&nbsp;人均价格：300
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="content-order-operation">
+                            <span class="order-total">合计：<span class="color-danger">&yen;36888</span></span>
+                        </div>
+                    </div>
+                </section>
+                <section class="content-wrap">
+                    <div class="content-split-title">
+                        <span class="split-line"></span>
+                        <span class="split-title">服务评价</span>
+                        <span class="split-line"></span>
+                    </div>
+                    <div class="content-inner content-order-wrap">
+                        <div class="content-evaluate-operation">
+                            <div class="order-evaluate-result">
+                                <p class="evaluate-level">
+                                    <i class="icon icon-follow" data-stars="1"></i>
+                                    <i class="icon icon-follow" data-stars="2"></i>
+                                    <i class="icon icon-follow" data-stars="3"></i>
+                                    <i class="icon icon-follow" data-stars="4"></i>
+                                    <i class="icon icon-follow" data-stars="5"></i>
+                                </p>
+                                <p class="evaluate-info">非常满意，无可挑剔</p>
+                            </div>
+                            <div class="order-evaluate-tag">
+                                <p class="title">请选择标签</p>
+                                <a class="button click-status">服务态度恶劣</a>
+                                <a class="button click-status">活动收益很多</a>
+                                <a class="button click-status">活动内容枯燥</a>
+                                <a class="button click-status">服务态度恶劣</a>
+                                <a class="button click-status">活动收益很多</a>
+                                <a class="button click-status">活动内容枯燥</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="content-wrap">
+                    <div class="content-inner">
+                        <textarea name="" id="" rows="5" maxlength="150" class="evaluate-feedback" placeholder="其他意见和建议"></textarea>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../assets/js/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/tjhjs.min.js"></script>
+<script type="text/javascript" src="../assets/js/initjs.js"></script>
+<script type="text/javascript">
+    $(document).on('click','.tab-payment-none .btn-cancel-order', function () {
+        $.confirm("", "是否取消订单？",
+            function(){
+                // 点击确定触发回调函数
+                $.alert("订单取消成功！");
+        });
+    });
+    $(document).on('click','.tab-payment-done .btn-cancel-order', function () {
+        $.confirm("订单取消规则：订单取消规则内容订单取消规则内容", "取消该订单将只能返还订单金额的50%,是否取消订单？",
+            function(){
+                // 点击确定触发回调函数
+                $.alert("订单取消成功！");
+        });
+    });
+    $(document).on('click','.content-evaluate-operation .evaluate-level .icon-follow', function () {
+        var stars = $(this).attr('data-stars');
+        $(this).parent().children("i").attr("class", "icon icon-follow");
+        for(var i = 0; i<stars; i++){
+            $($('[data-stars]')[i]).addClass("star-light");
+        }
+    });
+</script>
+</html>

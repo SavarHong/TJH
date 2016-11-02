@@ -53,7 +53,7 @@
     width: $width;
     font-size: $fontsize;
     background-color: $color;
-    border: 0;
+    border: 1px solid $color;
     border-radius: rem-calc(8);
     text-align: center;
     line-height: $height;

@@ -33,10 +33,15 @@ $(function () {
     //客服电话弹窗
     $(document).on("pageInit", ".page", function(e, id, page) {
         $(this).on('click', '.actions-phone', function () {
-            var phoneHtml = "<a class='phone-box' href='tel:0592-57156278'>"
+            var phoneNum = $(this).attr("data-phone");
+            var phoneHtml = "<a class='phone-box' href='tel:"
+                                            + phoneNum
+                                        +"'>"
                                         + "<span class='phone-icon'><i class='icon icon-phone'></i></span>"
                                         + "<span class='phone-type'>客服电话</span>"
-                                        + "<span class='phone-num'>0592-57156278</span>"
+                                        + "<span class='phone-num'>"
+                                            + phoneNum
+                                        + "</span>"
                                     + "</a>";
             var buttons = [
                 {
@@ -69,6 +74,12 @@ $(function () {
                     $(".modal-overlay").remove();
                     $(".bar-footer").removeAttr("style");
                 }
+            }
+            if($(this).next().hasClass("div-collapse")){
+                $(this).next().removeClass("div-collapse");
+            }
+            else{
+                $(this).next().addClass("div-collapse");
             }
             if($(this).find(".icon").hasClass("icon-arrow-bottom")){
                 $(this).find(".icon").attr("class", "icon icon-arrow-top");
