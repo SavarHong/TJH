@@ -157,6 +157,16 @@ $(function () {
         });
     });
 
+    $(document).on("pageInit", function() {
+        $("[data-toggle='datetime']").datetimePicker({
+          toolbarTemplate: '<header class="picker-modal-header">\
+          <a class="header-link pull-left close-picker">取消</a>\
+          <a class="header-link pull-right close-picker">确定</a>\
+          <h5 class="title">选择活动时间</h5>\
+          </header>'
+        });
+      });
+
     $.init();
 });
 

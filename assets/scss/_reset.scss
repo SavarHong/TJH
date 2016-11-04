@@ -116,6 +116,12 @@ h5{
 .clearfix{
     @include clearfix();
 }
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
 .div-collapse{
     height: 0;
     overflow: hidden;

@@ -226,7 +226,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 13rem;
+    height: rem-calc(450);
     z-index: 11500;
     display: none;
     transition-property: transform;
@@ -241,9 +241,43 @@
     &.modal-out {
         transform: translate3d(0,100%,0);
     }
+    .picker-modal-header{
+        background-color: #f7f7f7;
+        border-top: 1px solid #e6e6e6;
+        border-bottom: 1px solid #e6e6e6;
+        position: relative;
+        height: rem-calc(88);
+        .title{
+            position: absolute;
+            top: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: rem-calc(88);
+            white-space: nowrap;
+            text-align: center;
+            font-size: rem-calc(30);
+        }
+        .header-link{
+            display: inline-block;
+            height: 100%;
+            line-height: rem-calc(88);
+            vertical-align: middle;
+            font-size: rem-calc(30);
+            position: relative;
+            z-index: 20;
+            &.pull-left{
+                padding-left: rem-calc(35);
+            }
+            &.pull-right{
+                padding-right: rem-calc(35);
+            }
+        }
+    }
     .picker-modal-inner {
         height: 100%;
         position: relative;
+        background-color: #fff;
     }
     .toolbar {
         @include hairline(top, $color-text-gray);
