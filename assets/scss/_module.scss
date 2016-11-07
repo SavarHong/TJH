@@ -1057,8 +1057,8 @@
     width: 100%;
     top: 50%;
     margin-top: -18px;
-    @include hairline(top, #a8abb0);
-    @include hairline(bottom, #a8abb0);
+    @include hairline(top, #ededed);
+    @include hairline(bottom, #ededed);
     pointer-events: none;
 }
 .operation-activity-helper{

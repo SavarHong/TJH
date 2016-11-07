@@ -3627,7 +3627,7 @@ html:not(.watch-active-state) .modal-button:active, .modal-button.active-state {
   right: auto;
   height: 1px;
   width: 100%;
-  background-color: #a8abb0;
+  background-color: #ededed;
   display: block;
   z-index: 15;
   -webkit-transform-origin: 50% 0%;
@@ -3657,7 +3657,7 @@ html:not(.watch-active-state) .modal-button:active, .modal-button.active-state {
   top: auto;
   height: 1px;
   width: 100%;
-  background-color: #a8abb0;
+  background-color: #ededed;
   display: block;
   z-index: 15;
   -webkit-transform-origin: 50% 100%;
