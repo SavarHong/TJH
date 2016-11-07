@@ -51,13 +51,24 @@
                             </ul>
                         </div>
                         <div class="content-order-operation">
-                            <span class="order-total"></span>
-                            <span class="order-btn">
-                                <a class="button button-confirm btn-service actions-phone" data-phone="0592-57156278">
-                                    <i class="icon icon-service"></i> 客服
+                            <div class="operation-activity-helper">
+                                <a href="#" class="share actions-share">
+                                    <i class="icon icon-orange icon-share"></i>
+                                    <p>分享行程</p>
                                 </a>
-                                <a href="javascript:void(0);" class="button button-disabled btn-planned">活动方案准备中</a>
-                            </span>
+                                <a href="#" class="destination">
+                                    <i class="icon icon-blue icon-destination"></i>
+                                    <p>目的地</p>
+                                </a>
+                                <a href="#" class="call actions-phone" data-phone="+86-15858588858">
+                                    <i class="icon icon-green icon-phone"></i>
+                                    <p>呼叫向导</p>
+                                </a>
+                                <a href="#" class="sign-in">
+                                    <i class="icon icon-pink-light icon-sign-in"></i>
+                                    <p>签到管理</p>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -66,7 +77,7 @@
     </div>
 </body>
 <script type="text/javascript" src="../assets/js/zepto.min.js"></script>
-<script type="text/javascript" src="../assets/js/tjhjs.min.js"></script>
+<script type="text/javascript" src="../assets/js/tjhjs.js"></script>
 <script type="text/javascript" src="../assets/js/initjs.js"></script>
 <script type="text/javascript">
     $(document).on('click','.tab-payment-none .btn-cancel-order', function () {

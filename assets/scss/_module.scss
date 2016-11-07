@@ -139,36 +139,6 @@
         }
     }
 }
-.phone-box{
-    @include box();
-    & > *{
-        @include box();
-        @include box-o-p(vertical, center);
-    }
-    @include arrow-right(rem-calc(24), rem-calc(50));
-    .phone-icon{
-        width: rem-calc(48);
-        text-align: center;
-        margin-left: rem-calc(52);
-        .icon{
-            width: 100%;
-            height: rem-calc(48);
-            line-height: rem-calc(48);
-            border-radius: rem-calc(6);
-            background-color: $color-primary;
-            color: #fff;
-            font-size: rem-calc(36);
-            display: block;
-        }
-    }
-    .phone-type{
-        padding-left: rem-calc(32);
-    }
-    .phone-num{
-        color: $color-text-gray;
-        padding-left: rem-calc(72);
-    }
-}
 /* 产品页 样式 */
 // 详情页
 .content-banner{
@@ -754,7 +724,7 @@
         -webkit-align-items: center;
         -moz-align-items: center;
         align-items: center;
-        height: rem-calc(88);
+        min-height: rem-calc(88);
         .order-total{
             font-size: rem-calc(24);
             -webkit-flex: 1;
@@ -1017,8 +987,8 @@
     padding: 0;
     text-align: right;
     font-size: rem-calc(40);
-    -webkit-mask-box-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0.8) 10%, white 20%, white 80%, rgba(255, 255, 255, 0.8) 90%, rgba(255, 255, 255, 0.5) 100%);
-    -webkit-mask-box-image: linear-gradient(top, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0.8) 10%, white 20%, white 80%, rgba(255, 255, 255, 0.8) 90%, rgba(255, 255, 255, 0.5) 100%);
+    -webkit-mask-box-image: -webkit-linear-gradient(top, transparent, rgba(255, 255, 255, 0.8) 15%, white 30%, white 70%, rgba(255, 255, 255, 0.8) 85%, transparent 100%);
+    -webkit-mask-box-image: linear-gradient(top, transparent, rgba(255, 255, 255, 0.8) 15%, white 30%, white 70%, rgba(255, 255, 255, 0.8) 85%, transparent 100%);
 }
 .picker-modal-header + .picker-items{
     height: rem-calc(362);
@@ -1090,4 +1060,31 @@
     @include hairline(top, #a8abb0);
     @include hairline(bottom, #a8abb0);
     pointer-events: none;
+}
+.operation-activity-helper{
+    @include flexbox();
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    box-pack: justify;
+    width: 100%;
+    height: rem-calc(128);
+    padding-top: rem-calc(24);
+    a{
+        -webkit-flex: 1;
+        -moz-flex: 1;
+        flex: 1;
+        text-align: center;
+        font-size: rem-calc(24);
+        color: #666;
+        .icon{
+            font-size: rem-calc(36);
+            display: inline-block;
+            width: rem-calc(48);
+            height: rem-calc(48);
+            text-align: center;
+            line-height: rem-calc(48);
+            border-radius: rem-calc(6);
+            color: #fff;
+        }
+    }
 }

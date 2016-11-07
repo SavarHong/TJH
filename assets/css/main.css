@@ -668,6 +668,96 @@ h5 {
   animation-delay: -0.16s;
 }
 
+/* phone box */
+.phone-box {
+  display: -webkit-box;
+  display: box;
+}
+.phone-box > * {
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+}
+.phone-box:after {
+  content: '\e90f';
+  font-family: "iconfont" !important;
+  font-style: normal;
+  font-size: 0.6rem;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  width: 0;
+  height: 0;
+  display: block;
+  color: #999;
+  position: absolute;
+  right: 1.25rem;
+}
+.phone-box .phone-icon {
+  width: 1.2rem;
+  text-align: center;
+  margin-left: 1.3rem;
+}
+.phone-box .phone-icon .icon {
+  width: 100%;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  border-radius: 0.15rem;
+  background-color: #06cc93;
+  color: #fff;
+  font-size: 0.9rem;
+  display: block;
+}
+.phone-box .phone-type {
+  padding-left: 0.8rem;
+}
+.phone-box .phone-num {
+  color: #999;
+  padding-left: 1.8rem;
+}
+
+/* share box */
+.share-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  width: 100%;
+  height: 6rem;
+  padding-top: 1.25rem;
+}
+.share-box a {
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  font-size: 0.6rem;
+  color: #333;
+}
+.share-box a .icon {
+  font-size: 1.375rem;
+  display: inline-block;
+  width: 2.2rem;
+  height: 2.2rem;
+  text-align: center;
+  line-height: 2.2rem;
+  border-radius: 50%;
+  color: #fff;
+}
+.share-box a p {
+  line-height: initial;
+}
+
 @font-face {
   font-family: "iconfont";
   src: url("../fonts/iconfont.woff") format("woff"), url("../fonts/iconfont.ttf") format("truetype"), url("../fonts/iconfont.svg#iconfont") format("svg")
@@ -677,6 +767,7 @@ h5 {
   font-family: "iconfont" !important;
   font-size: 0.7rem;
   font-style: normal;
+  font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
@@ -796,6 +887,14 @@ h5 {
 
 .icon-calendar:before {
   content: "\e921";
+}
+
+.icon-sign-in:before {
+  content: "\e923";
+}
+
+.icon-sms:before {
+  content: "\e924";
 }
 
 .icon-follow:before {
@@ -2355,58 +2454,6 @@ html:not(.watch-active-state) .modal-button:active, .modal-button.active-state {
   color: #999;
 }
 
-.phone-box {
-  display: -webkit-box;
-  display: box;
-}
-.phone-box > * {
-  display: -webkit-box;
-  display: box;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  box-orient: vertical;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  box-pack: center;
-}
-.phone-box:after {
-  content: '\e90f';
-  font-family: "iconfont" !important;
-  font-style: normal;
-  font-size: 0.6rem;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale;
-  width: 0;
-  height: 0;
-  display: block;
-  color: #999;
-  position: absolute;
-  right: 1.25rem;
-}
-.phone-box .phone-icon {
-  width: 1.2rem;
-  text-align: center;
-  margin-left: 1.3rem;
-}
-.phone-box .phone-icon .icon {
-  width: 100%;
-  height: 1.2rem;
-  line-height: 1.2rem;
-  border-radius: 0.15rem;
-  background-color: #06cc93;
-  color: #fff;
-  font-size: 0.9rem;
-  display: block;
-}
-.phone-box .phone-type {
-  padding-left: 0.8rem;
-}
-.phone-box .phone-num {
-  color: #999;
-  padding-left: 1.8rem;
-}
-
 /* 产品页 样式 */
 .content-banner {
   font-size: 0;
@@ -3156,7 +3203,7 @@ html:not(.watch-active-state) .modal-button:active, .modal-button.active-state {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 2.2rem;
+  min-height: 2.2rem;
 }
 .content-order-wrap .content-order-operation .order-total {
   font-size: 0.6rem;
@@ -3489,8 +3536,8 @@ html:not(.watch-active-state) .modal-button:active, .modal-button.active-state {
   padding: 0;
   text-align: right;
   font-size: 1rem;
-  -webkit-mask-box-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8) 10%, white 20%, white 80%, rgba(255, 255, 255, 0.8) 90%, rgba(255, 255, 255, 0.5) 100%);
-  -webkit-mask-box-image: linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8) 10%, white 20%, white 80%, rgba(255, 255, 255, 0.8) 90%, rgba(255, 255, 255, 0.5) 100%);
+  -webkit-mask-box-image: -webkit-linear-gradient(top, transparent, rgba(255, 255, 255, 0.8) 15%, white 30%, white 70%, rgba(255, 255, 255, 0.8) 85%, transparent 100%);
+  -webkit-mask-box-image: linear-gradient(top, transparent, rgba(255, 255, 255, 0.8) 15%, white 30%, white 70%, rgba(255, 255, 255, 0.8) 85%, transparent 100%);
 }
 
 .picker-modal-header + .picker-items {
@@ -3630,6 +3677,39 @@ html:not(.watch-active-state) .modal-button:active, .modal-button.active-state {
         -ms-transform: scaleY(0.33);
             transform: scaleY(0.33);
   }
+}
+
+.operation-activity-helper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  width: 100%;
+  height: 3.2rem;
+  padding-top: 0.6rem;
+}
+.operation-activity-helper a {
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  font-size: 0.6rem;
+  color: #666;
+}
+.operation-activity-helper a .icon {
+  font-size: 0.9rem;
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  text-align: center;
+  line-height: 1.2rem;
+  border-radius: 0.15rem;
+  color: #fff;
 }
 
 /* fadeIn 的样式  */

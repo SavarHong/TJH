@@ -9,6 +9,7 @@
   font-family:"iconfont" !important;
   font-size:rem-calc(28);
   font-style:normal;
+  font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
@@ -42,6 +43,8 @@
 .icon-help:before { content: "\e91f"; }
 .icon-disabled:before { content: "\e91e"; }
 .icon-calendar:before { content: "\e921"; }
+.icon-sign-in:before { content: "\e923"; }
+.icon-sms:before { content: "\e924"; }
 .icon-follow:before { content: "\e926"; }
 .icon-follow-hollow:before { content: "\e927"; }
 .icon-delete:before { content: "\e91d"; }

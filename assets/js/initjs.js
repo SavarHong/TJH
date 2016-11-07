@@ -57,6 +57,41 @@ $(function () {
         });
     });
 
+    //分享弹窗
+    $(document).on("pageInit", ".page", function(e, id, page) {
+        $(this).on('click', '.actions-share', function () {
+            var shareHtml = "<div class='share-box'>"
+                                        + "<a class='qq'>"
+                                            + "<i class='icon icon-blue icon-qq'></i>"
+                                            + "<p>QQ</p>"
+                                        + "</a>"
+                                        + "<a class='weixin'>"
+                                            + "<i class='icon icon-green-dark icon-weixin'></i>"
+                                            + "<p>微信</p>"
+                                        + "</a>"
+                                        + "<a class='weibo'>"
+                                            + "<i class='icon icon-pink-light icon-weibo'></i>"
+                                            + "<p>微博</p>"
+                                        + "</a>"
+                                        + "<a class='sms'>"
+                                            + "<i class='icon icon-green icon-sms'></i>"
+                                            + "<p>信息</p>"
+                                        + "</a>"
+                                    + "</div>";
+            var buttons = [
+                {
+                    text: shareHtml,
+                    extend: 'list-item'
+                },
+                {
+                    text: '关闭'
+                }
+            ];
+            var groups = [buttons];
+            $.actions(groups);
+        });
+    });
+
     // 层折叠
     $(document).on("pageInit", ".page", function(e, id, page) {
         $(this).on('click', '.div-collapse-operation', function(){
@@ -160,7 +195,7 @@ $(function () {
     $(document).on("pageInit", function() {
         $("[data-toggle='datetime']").datetimePicker({
           toolbarTemplate: '<header class="picker-modal-header">\
-          <a class="header-link pull-left close-picker">取消</a>\
+          <a class="header-link pull-left cancel-picker">取消</a>\
           <a class="header-link pull-right close-picker">确定</a>\
           <h5 class="title">选择活动时间</h5>\
           </header>'

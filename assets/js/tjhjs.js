@@ -4735,7 +4735,7 @@ Framework7 Swiper Additions
         }
 
         var overlay;
-        if (!isLoginScreen && !isPickerModal && !isToast) {
+        if (!isLoginScreen && !isToast) {
             if ($('.modal-overlay').length === 0 && !isPopup) {
                 $(defaults.modalContainer).append('<div class="modal-overlay"></div>');
             }
@@ -4757,7 +4757,7 @@ Framework7 Swiper Additions
         }
 
         // Classes for transition in
-        if (!isLoginScreen && !isPickerModal && !isToast) overlay.addClass('modal-overlay-visible');
+        if (!isLoginScreen && !isToast) overlay.addClass('modal-overlay-visible');
         modal.removeClass('modal-out').addClass('modal-in').transitionEnd(function (e) {
             if (modal.hasClass('modal-out')) modal.trigger('closed');
             else modal.trigger('opened');
@@ -4783,7 +4783,7 @@ Framework7 Swiper Additions
                 overlay.removeClass('modal-overlay-visible');
             }
         }
-        else if (!isPickerModal) {
+        else{
             overlay.removeClass('modal-overlay-visible');
         }
 
@@ -5501,6 +5501,22 @@ Framework7 Swiper Additions
       if (pickerToClose.length > 0) {
         $.closeModal(pickerToClose.parents('.popover'));
       }
+    }
+  });
+
+  $(document).on("click", ".cancel-picker", function() {
+    var pickerToClose = $('.picker-modal.modal-in');
+    if (pickerToClose.length > 0) {
+      $.closeModal(pickerToClose);
+    }
+    else {
+      pickerToClose = $('.popover.modal-in .picker-modal');
+      if (pickerToClose.length > 0) {
+        $.closeModal(pickerToClose.parents('.popover'));
+      }
+    }
+    if($("#datetime").length > 0){
+      $("#datetime").val("");
     }
   });
 
@@ -6428,12 +6444,22 @@ Framework7 Swiper Additions
     return arr;
   })();
 
+  var initDate = today.getDate();
+  if(initDate < 10){
+    initDate = "0" + today.getDate();
+  }
+
+  var initAP = "上午";
+  if(today.getHours() > 12){
+    initAP = "下午";
+  }
+
 
   var defaults = {
 
     rotateEffect: false,  //为了性能
 
-    value: [today.getFullYear(), formatNumber(today.getMonth()+1), today.getDate(), today.getHours(), formatNumber(today.getMinutes())],
+    value: [today.getFullYear(), formatNumber(today.getMonth()+1), initDate, initAP],
 
     onChange: function (picker, values, displayValues) {
       var days = getDaysByMonthAndYear(picker.cols[1].value, picker.cols[0].value);
@@ -6443,8 +6469,9 @@ Framework7 Swiper Additions
     },
 
     formatValue: function (p, values, displayValues) {
-      return displayValues[0] + '-' + values[1] + '-' + values[2] + ' ' + values[3] + ':' + values[4];
+      return displayValues[0] + '-' + values[1] + '-' + values[2] + ' ' + values[3];
     },
+
 
     cols: [
       // Years
@@ -6455,7 +6482,7 @@ Framework7 Swiper Additions
       {
         values: initMonthes
       },
-      // Days
+      // Date
       {
         values: getDays()
       },
@@ -6465,7 +6492,7 @@ Framework7 Swiper Additions
         divider: true,
         content: '  '
       },
-      // Hours
+      /* Hours
       {
         values: (function () {
           var arr = [];
@@ -6485,7 +6512,14 @@ Framework7 Swiper Additions
           for (var i = 0; i <= 59; i++) { arr.push(i < 10 ? '0' + i : i); }
           return arr;
         })(),
-      }
+      },*/
+      // 上午/下午
+      {
+        values: (function () {
+          var arr = ["上午", "下午"];
+          return arr;
+        })(),
+      },
     ]
   };
 

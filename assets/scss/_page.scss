@@ -394,3 +394,65 @@
         animation-delay: -0.16s;
     }
 }
+/* phone box */
+.phone-box{
+    @include box();
+    & > *{
+        @include box();
+        @include box-o-p(vertical, center);
+    }
+    @include arrow-right(rem-calc(24), rem-calc(50));
+    .phone-icon{
+        width: rem-calc(48);
+        text-align: center;
+        margin-left: rem-calc(52);
+        .icon{
+            width: 100%;
+            height: rem-calc(48);
+            line-height: rem-calc(48);
+            border-radius: rem-calc(6);
+            background-color: $color-primary;
+            color: #fff;
+            font-size: rem-calc(36);
+            display: block;
+        }
+    }
+    .phone-type{
+        padding-left: rem-calc(32);
+    }
+    .phone-num{
+        color: $color-text-gray;
+        padding-left: rem-calc(72);
+    }
+}
+/* share box */
+.share-box{
+    @include flexbox();
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    box-pack: justify;
+    width: 100%;
+    height: rem-calc(240);
+    padding-top: rem-calc(50);
+    a{
+        -webkit-flex: 1;
+        -moz-flex: 1;
+        flex: 1;
+        text-align: center;
+        font-size: rem-calc(24);
+        color: $color-title;
+        .icon{
+            font-size: rem-calc(55);
+            display: inline-block;
+            width: rem-calc(88);
+            height: rem-calc(88);
+            text-align: center;
+            line-height: rem-calc(88);
+            border-radius: 50%;
+            color: #fff;
+        }
+        p{
+            line-height: initial;
+        }
+    }
+}
