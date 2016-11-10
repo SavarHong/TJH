@@ -243,7 +243,6 @@
     }
     .picker-modal-header{
         background-color: #f7f7f7;
-        border-top: 1px solid #e6e6e6;
         border-bottom: 1px solid #e6e6e6;
         position: relative;
         height: rem-calc(88);
@@ -266,6 +265,9 @@
             font-size: rem-calc(30);
             position: relative;
             z-index: 20;
+            background: none;
+            border: 0;
+            color: $color-primary;
             &.pull-left{
                 padding-left: rem-calc(35);
             }

@@ -227,11 +227,17 @@
                 // 重置加载flag
                 loading = false;
 
+                var splitHtml = "<div class='content-split-title'>"
+                                        + "<span class='split-line'></span>"
+                                        + "<span class='split-title'>我是有底线的</span>"
+                                        + "<span class='split-line'></span>"
+                                    + "</div>";
+
                 if ($('.list-item').length >= maxItems) {
                     // 加载完毕，则注销无限加载事件，以防不必要的加载
                     $.detachInfiniteScroll($('.infinite-scroll'));
                     // 隐藏加载提示符
-                    $('.infinite-scroll-preloader').html("我是有底线的");
+                    $('.infinite-scroll-preloader').html(splitHtml);
                     return;
                 }
 

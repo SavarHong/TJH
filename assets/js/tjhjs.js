@@ -68,6 +68,7 @@
     //$.initPullToRefresh($content);
     $.initInfiniteScroll($content);
     $.initCalendar($content);
+    $.initWaterFallScroll($content);
 
     //extend
     if($.initSwiper) $.initSwiper($content);
@@ -6440,7 +6441,7 @@ Framework7 Swiper Additions
 
   var initYears = (function () {
     var arr = [];
-    for (var i = 1950; i <= 2030; i++) { arr.push(i); }
+    for (var i = today.getFullYear(); i <= 2030; i++) { arr.push(i); }
     return arr;
   })();
 
@@ -6687,5 +6688,68 @@ Framework7 Swiper Additions
             pageContainer.off('pageBeforeRemove', detachEvents);
         }
         pageContainer.on('pageBeforeRemove', detachEvents);
+    };
+}(Zepto);
+
+/* ===============================================================================
+************   Water Fall   ************
+=============================================================================== */
+/* global Zepto:true */
+
++ function($) {
+    'use strict';
+
+    $.waterFall = function (data) {
+        var waterFallContent = $('.waterfall-scroll');
+        var column = [$('#col1'), $('#col2')];
+        var appendData = data;
+        var w = this;
+
+        w.getRowByHeight = function () {
+            var height = [];
+            for (var i = 0; column[i]; i++) {
+              column[i].height = column[i].height();
+              height.push(column[i]);
+            }
+            // 对高度进行排序，低--》高,保证最矮的优先加载
+            height.sort(function (a, b) {
+              return a.height - b.height;
+            });
+            return height;
+        };
+        w.createHtml = function (imageUrl, appSchemaUrl) {
+            var strHtml = '<img class="waterfall-img lazy" src="" data-src="' + imageUrl + '" alt="" >';
+            var div = document.createElement('div');
+            div.className = 'cell-item need-check has-link';
+            div.innerHTML = strHtml;
+            div.setAttribute("data-src", appSchemaUrl);
+            return div;
+        };
+
+        w.lazyLoadImg = function () {
+            var unloadedpic = waterFallContent.find(".waterfall-img").not(".lazy-loaded");
+            unloadedpic.trigger('lazy');
+        };
+
+        w.init = function () {
+            var rows = w.getRowByHeight(), div, k;
+            for (var i = 0; appendData[i]; i++) {
+              div = w.createHtml(data[i].imageUrl, data[i].appSchemaUrl);
+              // 因为是4列，所以数据以4列一个轮回加载，改成2列
+              k = ((i + 1) > 2) ? i % 2 : i;
+              // 在列上添加数据
+              rows[k].append(div);
+              w.lazyLoadImg();
+            }
+        };
+
+        w.init();
+    }
+    $.initWaterFallScroll = function (pageContainer) {
+        pageContainer = $(pageContainer);
+        var waterFallContent = pageContainer.find('.waterfall-scroll');
+        if (waterFallContent.length === 0) return;
+        $.waterFall(waterFallContent);
+        $.attachInfiniteScroll(waterFallContent);
     };
 }(Zepto);

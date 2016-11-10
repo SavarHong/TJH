@@ -376,7 +376,7 @@
     div{
         width: 8px;
         height: 8px;
-        background-color: $color-text-gray;
+        background-color: #bbb;
         border-radius: 100%;
         display: inline-block;
         -webkit-animation: three-bounce-delay 1.4s infinite ease-in-out;
@@ -392,6 +392,14 @@
     .preloader-loading-bounce2{
         -webkit-animation-delay: -0.16s;
         animation-delay: -0.16s;
+    }
+}
+.infinite-scroll-preloader{
+    .content-split-title{
+        margin: rem-calc(10) auto rem-calc(48);
+        .split-title{
+            color: #bbb;
+        }
     }
 }
 /* phone box */

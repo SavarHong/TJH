@@ -87,6 +87,11 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"], button,{
     -webkit-appearance: none;
+    font-family: $body-font-family;
+}
+button{
+    background: none;
+    border: 0;
 }
 input[type="text"],
 input[type="password"],

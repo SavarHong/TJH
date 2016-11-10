@@ -92,6 +92,7 @@
                 font-size: rem-calc(30);
                 color: #333;
                 padding: rem-calc(25 0 15);
+                position: relative;
             }
         }
         .title{
@@ -107,16 +108,47 @@
                 display: inline-block;
                 vertical-align: middle;
             }
+            .btn-delete{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: rem-calc(60);
+                height: 100%;
+                padding-top: rem-calc(16);
+                text-align: right;
+                .icon{
+                    font-size: rem-calc(24);
+                    color: $color-text-gray;
+                }
+            }
         }
         .photo{
             position: relative;
             font-size: 0;
             .tag{
+                height: rem-calc(40);
+                line-height: rem-calc(40);
+                white-space: nowrap;
                 position: absolute;
                 left: 0;
                 top: 0;
                 font-size: rem-calc(20);
                 color: #fff;
+                background-color: $color-primary;
+                padding: rem-calc(0 12);
+                &:after{
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    display: block;
+                    position: absolute;
+                    z-index: 12;
+                    top: 0;
+                    right: rem-calc(-12);
+                    border-top: rem-calc(21) solid $color-primary;
+                    border-right: rem-calc(12) solid transparent;
+                    border-bottom: rem-calc(21) solid $color-primary;
+                }
             }
         }
         .info{
@@ -518,11 +550,15 @@
             flex: 1;
             font-size: rem-calc(30);
             color: $color-title;
+            small{
+                color: #bbb;
+                font-size: rem-calc(20);
+                display: block;
+            }
         }
         .core-entry-content{
             font-size: rem-calc(30);
             color: $color-text-gray;
-            margin-right: rem-calc(20);
             .icon-circle{
                 color: $color-danger;
                 font-size: rem-calc(16);
@@ -532,6 +568,7 @@
         }
         .core-entry-arrow{
             padding-right: rem-calc(5);
+            margin-left: rem-calc(20);
             .icon{
                 font-size: rem-calc(28);
                 color: $color-text-gray;
@@ -1086,5 +1123,57 @@
             border-radius: rem-calc(6);
             color: #fff;
         }
+    }
+}
+// integral redeem
+.integral-current{
+    background-color: $color-primary;
+    height: rem-calc(300);
+    overflow: hidden;
+    color: #fff;
+    font-size: rem-calc(24);
+    text-align: center;
+    position: relative;
+    .integral-text{
+        font-size: rem-calc(120);
+        line-height: rem-calc(150);
+    }
+    .integral-text-shadow{
+        border-radius: 50%;
+    }
+    .integral-title{
+        padding-top: rem-calc(45);
+    }
+    .integral-explain{
+        position: absolute;
+        color: #fff;
+        top: rem-calc(26);
+        right: rem-calc(30);
+        .icon{
+            font-size: rem-calc(24);
+        }
+    }
+}
+.integral-explain-box{
+    li{
+        height: auto;
+        &:last-child{
+            .integral-explain-item{
+                @include hairline-remove(bottom);
+            }
+        }
+    }
+    .integral-explain-item{
+        position: relative;
+        @include hairline(bottom, #e6e6e6);
+    }
+    .integral-explain-title{
+        color: $color-title;
+        padding: rem-calc(20 0 15);
+    }
+    .integral-explain-text{
+        padding-bottom: rem-calc(25);
+        color: $color-text-gray;
+        font-size: rem-calc(24);
     }
 }
