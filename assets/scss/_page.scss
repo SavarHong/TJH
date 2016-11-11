@@ -154,6 +154,12 @@
         }
     }
 }
+.bar-link{
+    @include flexbox();
+    -webkit-align-items:center;
+    -moz-align-items:center;
+    align-items:center;
+}
 
 /* 底部导航 */
 .footer-menu{
