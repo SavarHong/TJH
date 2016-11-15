@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SUIM: Build mobile apps with simple HTML, CSS, and JS components.">
+    <meta name="author" content="Savar">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="icon" href="">
+</head>
+<body>
+    <div class="page-wrap">
+        <div class="page">
+            <header class="bar bar-nav">
+                <a href="我的-我的积分-积分兑换.html" class="bar-menu menu-left">
+                    <i class="icon icon-arrow-left"></i>
+                </a>
+                <a href="javascript:void(0);" class="bar-menu menu-right actions-share">
+                    <i class="icon icon-share"></i>
+                </a>
+                <div class="bar-center">
+                    <h1>商品详情</h1>
+                </div>
+            </header>
+
+            <div class="bar bar-footer">
+                <div class="footer-menu footer-tip">
+                    <div class="tip-info">
+                        <b class="color-title">单价: <span class="color-danger">566</span>积分</b>
+                    </div>
+                    <div class="footer-btn btn-redeem">我要兑换</div>
+                </div>
+            </div>
+            <div class="content">
+                <section class="content-banner">
+                    <img src="../assets/img/banner/reddem-product-banner.jpg" class="img-all">
+                </section>
+                <section class="content-inner content-main-info integral-redeem-wrap">
+                    <div class="content-info-box">
+                        <p class="info-title">
+                            太平鸟男装 短袖潮流t恤男2016夏季新款白色圆领t恤BWDA62212
+                        </p>
+                        <p class="info-price">
+                            <i class="icon icon-wealth"></i> <span class="color-danger">566</span> 市场参考价：&yen;188/件
+                        </p>
+                    </div>
+                </section>
+                <section class="content-wrap">
+                    <h5 class="content-type-title color-primary">产品详情</h5>
+                    <div class="content-inner">
+                        <div class="content-type-description">
+                            <p>
+                                川藏线在5条进藏公路中以里程最长，沿途跨越众多高山大河，一路上景观千变万化：有高山峡谷，有一望无际的草原，有雪山草甸。
+                            </p>
+                            <div class="photo">
+                                <img src="../assets/img/product/reddem-product-img1.jpg" class="img-all">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../assets/js/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/tjhjs.min.js"></script>
+<script type="text/javascript" src="../assets/js/initjs.js"></script>
+<script type="text/javascript">
+    $(document).on('click', '.footer-menu .btn-redeem', function () {
+        var maleHtml = "<label for='gender-male' class='hover-status gender-box'>"
+                                    + "<span class='gender-type'>男</span>"
+                                    + "<input type='radio' name='gender' id='gender-male'"
+                                    + ">"
+                                    + "<span class='gender-radio'></span>"
+                                + "</label>";
+        var femaleHtml = "<label for='gender-female' class='hover-status gender-box'>"
+                                    + "<span class='gender-type'>女</span>"
+                                    + "<input type='radio' name='gender' id='gender-female'"
+                                    +">"
+                                    + "<span class='gender-radio'></span>"
+                                + "</label>";
+        var buttons = [
+            {
+                text: maleHtml,
+                label: true,
+                extend: 'list-item',
+                onClick: function(e){
+                    $(".core-entry-gender").attr("data-gender", "gender-male");
+                }
+            },
+            {
+                text: femaleHtml,
+                extend: 'list-item',
+                onClick: function(e){
+                    $(".core-entry-gender").attr("data-gender", "gender-female");
+                }
+            },
+            {
+                text: '确定',
+                extend: 'confirm-btn',
+            }
+        ];
+        var groups = [buttons];
+        $.actions(groups);
+    });
+</script>
+</html>

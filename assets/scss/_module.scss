@@ -1177,3 +1177,96 @@
         font-size: rem-calc(24);
     }
 }
+.integral-redeem-wrap{
+    padding: rem-calc(15);
+    .integral-redeem-item{
+        float: left;
+        width: 50%;
+        padding: rem-calc(10 15);
+        .item-image{
+            width: 100%;
+            position: relative;
+            font-size: 0;
+            .tag{
+                height: rem-calc(40);
+                line-height: rem-calc(40);
+                white-space: nowrap;
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-size: rem-calc(20);
+                color: #fff;
+                padding: rem-calc(0 12);
+                &:after{
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    display: block;
+                    position: absolute;
+                    z-index: 12;
+                    top: 0;
+                    right: rem-calc(-12);
+                }
+            }
+            .tag-green:after{
+                border-top: rem-calc(21) solid transparent;
+                border-left: rem-calc(12) solid $color-primary;
+                border-bottom: rem-calc(21) solid transparent;
+            }
+            .tag-pink-light:after{
+                border-top: rem-calc(21) solid transparent;
+                border-left: rem-calc(12) solid $color-pink-light;
+                border-bottom: rem-calc(21) solid transparent;
+            }
+        }
+        .item-info{
+            font-size: rem-calc(20);
+            color: $color-title;
+            padding-top: rem-calc(5);
+        }
+        .item-info-price{
+            @include flexbox();
+            -webkit-align-items:center;
+            -moz-align-items:center;
+            align-items:center;
+            color: $color-text-light;
+            margin-top: rem-calc(5);
+            .icon{
+                font-size: rem-calc(22);
+            }
+            .color-danger{
+                -webkit-flex: 1;
+                -moz-flex: 1;
+                flex: 1;
+                padding-left: rem-calc(5);
+            }
+        }
+    }
+    .content-info-box{
+        padding: rem-calc(0 15);
+        .info-title{
+            font-size: rem-calc(30);
+            color: $color-title;
+        }
+        .info-price{
+            @include flexbox();
+            -webkit-align-items:center;
+            -moz-align-items:center;
+            align-items:center;
+            color: $color-text-light;
+            margin-top: rem-calc(5);
+            font-size: rem-calc(24);
+            .icon{
+                font-size: rem-calc(24);
+                color: $color-text-gray;
+            }
+            .color-danger{
+                -webkit-flex: 1;
+                -moz-flex: 1;
+                flex: 1;
+                padding-left: rem-calc(5);
+                font-size: rem-calc(36);
+            }
+        }
+    }
+}

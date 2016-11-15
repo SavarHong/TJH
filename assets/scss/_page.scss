@@ -159,6 +159,22 @@
     -webkit-align-items:center;
     -moz-align-items:center;
     align-items:center;
+    height: 100%;
+    .bar-link-item{
+        font-size: rem-calc(22);
+        -webkit-flex: 1;
+        -moz-flex: 1;
+        flex: 1;
+        text-align: center;
+        color: #666;
+        border-right: 1px solid #e6e6e6;
+        &:last-child{
+            border-right: 0;
+        }
+        .icon{
+            font-size: rem-calc(22);
+        }
+    }
 }
 
 /* 底部导航 */

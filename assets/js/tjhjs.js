@@ -1473,7 +1473,7 @@ Device/OS Detection
   // Attach PUSH event handlers
   // ==========================
 
-  if($.tjhConfig.pushjs) {
+  /*if($.tjhConfig.pushjs) {
     window.addEventListener('click', function (e) {
       //支持通过click触发
       var target = getTarget(e);
@@ -1492,7 +1492,7 @@ Device/OS Detection
       });
     });
     window.addEventListener('popstate', popstate);
-  }
+  } 注释该段js，防止点击a标签不刷新页面*/
 
   $(document).on("click", ".back", function() {
     history.back();
