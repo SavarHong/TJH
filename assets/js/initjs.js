@@ -1,4 +1,4 @@
-/*
+ /*
  * 依赖ZeptoJs
 */
 
@@ -193,6 +193,7 @@ $(function () {
     });
 
     $(document).on("pageInit", function() {
+        //时间选择器
         $("[data-toggle='datetime']").datetimePicker({
           toolbarTemplate: '<header class="picker-modal-header">\
           <button class="header-link pull-left cancel-picker">取消</button>\
@@ -200,6 +201,17 @@ $(function () {
           <h5 class="title">选择活动时间</h5>\
           </header>'
         });
+        // 选项卡跳转
+        if($("[data-tab]").length > 0){
+            var hash = window.location.hash;
+            if(hash != ""){
+                $("[data-tab]").find("a").removeClass("active");
+                $("[data-tab]").find("a[href='" + hash + "']").addClass("active");
+                $(hash).siblings().removeClass("active");
+                $(hash).addClass("active")
+            }
+
+        }
     });
 
     $.init();

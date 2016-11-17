@@ -1270,3 +1270,41 @@
         }
     }
 }
+.reddem-product-box{
+    @include flexbox();
+    padding: rem-calc(20);
+    .reddem-product-img{
+        width: rem-calc(150);
+        height: rem-calc(150);
+        overflow: hidden;
+    }
+    .reddem-product-info{
+        -webkit-flex: 1;
+        -moz-flex: 1;
+        flex: 1;
+        text-align: left;
+        padding-left: rem-calc(20);
+        font-size: rem-calc(22);
+        color: $color-title;
+        .product-info-title{
+            font-weight: bold;
+            padding-bottom: rem-calc(20);
+        }
+        .product-info-price{
+            font-size: rem-calc(36);
+            .icon{
+                font-size: rem-calc(24);
+                color: $color-text-gray;
+            }
+        }
+    }
+}
+.reddem-product-amount{
+    text-align: left;
+    padding-left: rem-calc(20);
+    .amount-title{
+        font-size: rem-calc(22);
+        color: $color-text-gray;
+        margin-right: rem-calc(30);
+    }
+}

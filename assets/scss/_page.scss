@@ -486,3 +486,37 @@
         }
     }
 }
+/* amount box */
+.amount-box{
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    height: rem-calc(62);
+    line-height: rem-calc(62);
+    overflow: hidden;
+    & > *{
+        float: left;
+        text-align: center;
+    }
+    button{
+        color: #5f646e;
+        width: rem-calc(60);
+        height: 100%;
+        line-height: rem-calc(62);
+        .icon{
+            font-size: rem-calc(24);
+        }
+        &.disabled{
+            color: #cfcfcf;
+        }
+    }
+    input[type='number']{
+        width: rem-calc(86);
+        height: 100%;
+        line-height: rem-calc(62);
+        font-size: rem-calc(30);
+        border: 1px solid #ddd;
+        border-width: 0 1px;
+    }
+}

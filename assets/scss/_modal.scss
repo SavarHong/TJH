@@ -219,6 +219,13 @@
         background: #eee;
     }
 }
+.actions-confirm-btn{
+    color: #fff;
+    background-color: $color-primary;
+    &:active{
+        background-color: #158655;
+    }
+}
 
 // Picker Modal
 .picker-modal {
