@@ -106,32 +106,5 @@
         $.actions(groups);
         $.initAmountBox();
     });
-    $.initAmountBox = function(){
-        var amountBox = $(".amount-box");
-        var number = amountBox.children(".amount-box-input");
-        var decrease = amountBox.children(".amount-box-decrease");
-        var increase = amountBox.children(".amount-box-increase");
-        increase.on("click", function(){
-            if(number.val() < 99){
-                number.val(parseInt(number.val())+1);
-            }
-            else if(number.val() > 1){
-                decrease.removeClass("disabled");
-            }
-            else{
-                number.val(99);
-            }
-        });
-        decrease.on("click", function(){
-            if(number.val() == 1){
-                decrease.addClass("disabled");
-                number.val(1);
-            }
-            else{
-                number.val(parseInt(number.val())-1);
-            }
-        });
-    }
-
 </script>
 </html>

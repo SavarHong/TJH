@@ -176,6 +176,7 @@
                 extend: 'list-item',
                 onClick: function(e){
                     $(".core-entry-gender").attr("data-gender", "gender-male");
+                    $(".core-entry-gender").find(".core-entry-content").text("男");
                 }
             },
             {
@@ -183,6 +184,7 @@
                 extend: 'list-item',
                 onClick: function(e){
                     $(".core-entry-gender").attr("data-gender", "gender-female");
+                    $(".core-entry-gender").find(".core-entry-content").text("女");
                 }
             }
         ];

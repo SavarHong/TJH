@@ -6753,3 +6753,41 @@ Framework7 Swiper Additions
         $.attachInfiniteScroll(waterFallContent);
     };
 }(Zepto);
+
+/* ===============================================================================
+************   Amount box   ************
+=============================================================================== */
+/* global Zepto:true */
+
++ function($) {
+    'use strict';
+
+    $.initAmountBox = function(){
+        var amountBox = $(".amount-box");
+        var number = amountBox.children(".amount-box-input");
+        var decrease = amountBox.children(".amount-box-decrease");
+        var increase = amountBox.children(".amount-box-increase");
+        increase.on("click", function(){
+            if(number.val() < 99){
+                number.val(parseInt(number.val())+1);
+            }
+            else{
+                number.val(99);
+            }
+            if(number.val() > 1){
+                decrease.removeClass("disabled");
+            }
+        });
+        decrease.on("click", function(){
+            if(number.val() == 1){
+                number.val(1);
+            }
+            else{
+                number.val(parseInt(number.val())-1);
+            }
+            if(number.val() == 2){
+                decrease.addClass("disabled");
+            }
+        });
+    }
+}(Zepto);
