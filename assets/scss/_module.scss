@@ -1336,7 +1336,8 @@
     li{
         padding: rem-calc(0 30);
         &:last-child{
-            .information-content{
+            .information-content,
+            .information-info{
                 @include hairline-remove(bottom);
             }
         }
@@ -1378,5 +1379,95 @@
         font-size: rem-calc(22);
         position: relative;
         @include hairline(bottom, #e6e6e6);
+    }
+    .information-item{
+        @include flexbox();
+        padding-top: rem-calc(30);
+        .information-tag{
+            width: rem-calc(142);
+            .tag{
+                width: rem-calc(120);
+                height: rem-calc(120);
+                line-height: rem-calc(120);
+                font-size: rem-calc(56);
+                text-align: center;
+                color: #fff;
+                border-radius: rem-calc(25);
+                display: block;
+            }
+        }
+        .information-info{
+            font-size: rem-calc(22);
+            -webkit-flex: 1;
+            -moz-flex: 1;
+            flex: 1;
+            padding-bottom: rem-calc(25);
+            position: relative;
+            @include hairline(bottom, #e6e6e6);
+            .information-info-title{
+                font-size: rem-calc(30);
+                color: $color-title;
+                font-weight: bold;
+                padding-bottom: rem-calc(15);
+            }
+        }
+    }
+}
+// game helper
+.game-helper-wrap{
+    padding: rem-calc(15);
+    .game-helper-item{
+        float: left;
+        width: 50%;
+        padding: rem-calc(15);
+        .item-image{
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            font-size: 0;
+        }
+        .item-tag{
+            font-size: rem-calc(30);
+            color: #fff;
+            white-space: nowrap;
+            height: rem-calc(64);
+            line-height: rem-calc(64);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            text-align: center;
+            width: 100%;
+            display: block;
+            .icon{
+                font-size: rem-calc(30);
+            }
+        }
+    }
+    .content-info-box{
+        padding: rem-calc(0 15);
+        .info-title{
+            font-size: rem-calc(30);
+            color: $color-title;
+        }
+        .info-price{
+            @include flexbox();
+            -webkit-align-items:center;
+            -moz-align-items:center;
+            align-items:center;
+            color: $color-text-light;
+            margin-top: rem-calc(5);
+            font-size: rem-calc(24);
+            .icon{
+                font-size: rem-calc(24);
+                color: $color-text-gray;
+            }
+            .color-danger{
+                -webkit-flex: 1;
+                -moz-flex: 1;
+                flex: 1;
+                padding-left: rem-calc(5);
+                font-size: rem-calc(36);
+            }
+        }
     }
 }
