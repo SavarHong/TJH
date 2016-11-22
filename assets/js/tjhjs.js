@@ -70,6 +70,9 @@
     $.initCalendar($content);
     $.initWaterFallScroll($content);
 
+    //计数器
+    if($(".amount-box").length > 0) $.initAmountBox();
+
     //extend
     if($.initSwiper) $.initSwiper($content);
   };
@@ -6785,7 +6788,7 @@ Framework7 Swiper Additions
             else{
                 number.val(parseInt(number.val())-1);
             }
-            if(number.val() == 2){
+            if(number.val() == 1){
                 decrease.addClass("disabled");
             }
         });
