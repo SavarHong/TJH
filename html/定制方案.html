@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SUIM: Build mobile apps with simple HTML, CSS, and JS components.">
+    <meta name="author" content="Savar">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>定制方案</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="icon" href="">
+</head>
+<body>
+    <div class="page-wrap">
+        <div class="page">
+            <header class="bar bar-nav">
+                <a href="#" class="bar-menu menu-left back">
+                    <i class="icon icon-arrow-left"></i>
+                </a>
+                <a href="#" class="bar-menu menu-right">
+                </a>
+                <div class="bar-center">
+                    <h1>定制方案</h1>
+                </div>
+            </header>
+            <div class="bar bar-footer">
+                <div class="footer-menu">
+                    <a href="#" class="phone actions-phone" data-phone="0592-57156278">
+                        <i class="icon icon-phone"></i>
+                        <p>电话咨询</p>
+                    </a>
+                    <div class="footer-btn" onclick="window.location.href='定制方案-成功.html'">提交定制需求</div>
+                </div>
+            </div>
+            <div class="content">
+                <section class="content-wrap">
+                    <h5 class="content-type-title color-title">活动类型：</h5>
+                    <div class="content-inner">
+                        <div class="content-type-filter btn-radio-group">
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn status-active" data-radio>不限</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>旅行式</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>拓展培训</a>
+                            </span>
+                            <span class="filter-btn-wrap">
+                                <a class="filter-btn" data-radio>聚会沙龙</a>
+                            </span>
+                        </div>
+                    </div>
+                </section>
+                <section class="content-wrap">
+                    <div class="content-inner">
+                        <div class="content-type-info">
+                            <ul>
+                                <li>
+                                    <div class="type-info-wrap">
+                                        <div class="type-info-title">出发城市 <span class="color-danger">*</span></div>
+                                        <div class="type-info-input">
+                                            <input type="text" name="cityNmae" id="cityName" placeholder="请输入城市名" value="厦门">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="type-info-wrap">
+                                        <div class="type-info-title">目的地 <span class="color-danger">*</span></div>
+                                        <div class="type-info-input">
+                                            <input type="text" name="destination" id="destination" placeholder="请输入目的">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="type-info-wrap">
+                                        <div class="type-info-title">出行日期 <span class="color-danger">*</span></div>
+                                        <div class="type-info-input">
+                                            <input type="text" name="activityDate" id="activityDate" data-toggle="date" placeholder="请选择出行日期" readonly>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="content-wrap">
+                    <div class="content-inner">
+                        <div class="content-type-info">
+                            <ul>
+                                <li>
+                                    <div class="type-info-wrap">
+                                        <div class="type-info-title">出行人数 <span class="color-danger">*</span></div>
+                                        <div class="type-info-input">
+                                            <input type="number" name="activityNum" id="activityNum" placeholder="请输入出行人数">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="type-info-wrap">
+                                        <div class="type-info-title">出行天数 <span class="color-danger">*</span></div>
+                                        <div class="type-info-input">
+                                            <span class="amount-box">
+                                                <button class="amount-box-decrease disabled" type="button"><i class="icon icon-cut"></i></button>
+                                                <input class="amount-box-input" type="number" min="1" max="99" value="1" readonly>
+                                                <button class="amount-box-increase" type="button"><i class="icon icon-add"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="content-wrap">
+                    <div class="content-inner">
+                        <div class="content-type-info">
+                            <ul>
+                                <li>
+                                    <div class="type-info-wrap">
+                                        <div class="type-info-title">人均预算 <span class="color-danger">*</span></div>
+                                        <div class="type-info-input">
+                                            <input type="number" name="budget" id="budget" placeholder="请输入人均预算">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="type-info-wrap">
+                                        <div class="type-info-title">企业名称 <span class="color-danger">*</span></div>
+                                        <div class="type-info-input">
+                                            <input type="text" name="company" id="company" placeholder="请输入人均预算">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="type-info-wrap">
+                                        <div class="type-info-title">联系人 <span class="color-danger">*</span></div>
+                                        <div class="type-info-input">
+                                            <input type="text" name="contacts" id="contacts" placeholder="请输入联系人">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="type-info-wrap">
+                                        <div class="type-info-title">联系电话 <span class="color-danger">*</span></div>
+                                        <div class="type-info-input">
+                                            <input type="text" name="phoneNum" id="phoneNum" placeholder="13858588858">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../assets/js/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/tjhjs.min.js"></script>
+<script type="text/javascript" src="../assets/js/initjs.js"></script>
+</html>

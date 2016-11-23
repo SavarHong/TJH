@@ -278,6 +278,9 @@
         border-top: 1px solid #e6e6e6;
         transition-duration: 300ms;
         opacity: 1;
+        &.div-collapse{
+            bottom: 0;
+        }
         .content-type-info{
             li{
                 padding: rem-calc(0 30);
@@ -519,4 +522,10 @@
         border: 1px solid #ddd;
         border-width: 0 1px;
     }
+}
+.page-tips{
+    text-align: center;
+    font-size: rem-calc(24);
+    color: $color-text-gray;
+    padding-top: rem-calc(100);
 }

@@ -79,10 +79,10 @@
     .content-title-center{
         text-align: center;
         font-size: rem-calc(30);
-        padding: rem-calc(25 0);
+        padding: rem-calc(25 0 0);
     }
     .content-list-box{
-        padding: rem-calc(0 12);
+        padding: rem-calc(25 12 0);
     }
     .list-item{
         padding-bottom: rem-calc(20);
@@ -380,6 +380,24 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
+        }
+    }
+}
+.filter-info-detail{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: rem-calc(88);
+    line-height: initial;
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6e6;
+    &.div-collapse{
+        top: 0;
+    }
+    .content-type-filter{
+        .filter-btn-wrap{
+            width: 33.3333%;
         }
     }
 }

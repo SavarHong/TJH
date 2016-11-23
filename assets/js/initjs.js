@@ -97,15 +97,20 @@ $(function () {
         $(this).on('click', '.div-collapse-operation', function(){
             if($(this).prev().hasClass("div-collapse")){
                 $(this).prev().removeClass("div-collapse");
-                if($(this).hasClass("tip-info-text")){
+                if($(this).hasClass("mark-show")){
                     var modalMark = "<div class='modal-overlay modal-overlay-visible'></div>";
                     $(page).append(modalMark);
-                    $(".bar-footer").css("z-index", "10601");
+                    if($(this).hasClass("filter-info-text")){
+                        $(".bar-nav").css("z-index", "10601");
+                    }
+                    if($(this).hasClass("tip-info-text")){
+                        $(".bar-footer").css("z-index", "10601");
+                    }
                 }
             }
             else{
                 $(this).prev().addClass("div-collapse");
-                if($(this).hasClass("tip-info-text")){
+                if($(this).hasClass("mark-show")){
                     $(".modal-overlay").remove();
                     $(".bar-footer").removeAttr("style");
                 }
