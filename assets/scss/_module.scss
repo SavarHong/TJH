@@ -392,12 +392,50 @@
     line-height: initial;
     background-color: #fff;
     border-bottom: 1px solid #e6e6e6;
+    .content-wrap{
+        padding-bottom: 0;
+    }
     &.div-collapse{
         top: 0;
     }
     .content-type-filter{
+        padding: rem-calc(10 0 5);
         .filter-btn-wrap{
             width: 33.3333%;
+        }
+    }
+    .content-type-title{
+        text-align: left;
+        color: $color-text-gray;
+    }
+    .filter-info-btn{
+        @include flexbox();
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        box-pack: justify;
+        width: 100%;
+        .button{
+            display: block;
+            width: 50%;
+            height: rem-calc(88);
+            font-size: rem-calc(36);
+            text-align: center;
+            line-height: rem-calc(88);
+            white-space: nowrap;
+            &.btn-confirm{
+                background-color: $color-primary;
+                color: #fff;
+                &:active {
+                    background-color: #158655;
+                }
+            }
+            &.btn-cancel{
+                background-color: #eee;
+                color: $color-primary;
+                &:active {
+                    background-color: #ddd;
+                }
+            }
         }
     }
 }

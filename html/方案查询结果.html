@@ -40,6 +40,10 @@
                                             <a class="filter-btn" data-radio>游水</a>
                                         </span>
                                     </div>
+                                    <div class="filter-info-btn">
+                                        <div class="button btn-confirm">确定</div>
+                                        <div class="button btn-cancel">取消</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -117,4 +121,11 @@
 <script type="text/javascript" src="../assets/js/zepto.min.js"></script>
 <script type="text/javascript" src="../assets/js/tjhjs.min.js"></script>
 <script type="text/javascript" src="../assets/js/initjs.js"></script>
+<script type="text/javascript">
+    $(document).on('click','.filter-info-btn .btn-cancel, .filter-info-btn .btn-confirm', function () {
+        $(this).closest(".filter-info-detail").addClass("div-collapse");
+        $(this).closest(".filter-info-detail").next().find(".icon").attr("class", "icon icon-arrow-bottom");
+        $(".modal-overlay").remove();
+    });
+</script>
 </html>
