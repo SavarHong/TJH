@@ -282,6 +282,16 @@
                 -moz-flex: 1;
                 flex: 1;
             }
+            .type-info-code{
+                width: rem-calc(120);
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+                @include hairline(left, #e6e6e6);
+                img{
+                    height: 100%;
+                }
+            }
         }
     }
     .content-type-insurance{
@@ -1526,4 +1536,48 @@
             }
         }
     }
+ }
+/* 登录/注册 */
+.content-login-box{
+    .content-operation{
+        .login-link{
+            font-size: rem-calc(28);
+            padding-top: rem-calc(10);
+            @include flexbox();
+            -webkit-align-items:center;
+            -moz-align-items:center;
+            align-items:center;
+            -webkit-justify-content: space-between;
+            -moz-justify-content: space-between;
+            justify-content: space-between;
+            a{
+                color: $color-text-gray;
+            }
+        }
+        .reg-notice{
+            font-size: rem-calc(28);
+            color: $color-text-gray;
+            padding-top: rem-calc(10);
+        }
+        .reg-link{
+            text-align: center;
+            font-size: rem-calc(28);
+            padding-top: rem-calc(40);
+        }
+    }
+    .content-split-title{
+        padding-top: rem-calc(50);
+    }
+    &.register-box{
+        .type-info-wrap .type-info-code{
+            width: rem-calc(160);
+            font-size: rem-calc(24);
+            text-align: center;
+            line-height: rem-calc(88);
+        }
+    }
+}
+.reg-notice-text{
+    font-size: rem-calc(24);
+    padding: rem-calc(20);
 }

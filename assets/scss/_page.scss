@@ -459,7 +459,8 @@
     }
 }
 /* share box */
-.share-box{
+.share-box,
+.quick-login{
     @include flexbox();
     -webkit-box-pack: justify;
     -moz-box-pack: justify;
@@ -488,6 +489,9 @@
             line-height: initial;
         }
     }
+}
+.quick-login{
+    padding-top: rem-calc(40);
 }
 /* amount box */
 .amount-box{
@@ -528,4 +532,14 @@
     font-size: rem-calc(24);
     color: $color-text-gray;
     padding-top: rem-calc(100);
+}
+/* Logo */
+.content-logo{
+    text-align: center;
+    padding: rem-calc(30 0 25);
+    .logo{
+        width: rem-calc(300);
+        height: rem-calc(100);
+        display: inline-block;
+    }
 }

@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SUIM: Build mobile apps with simple HTML, CSS, and JS components.">
+    <meta name="author" content="Savar">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>登录</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="icon" href="">
+</head>
+<body>
+    <div class="page-wrap">
+        <div class="page">
+            <header class="bar bar-nav">
+                <a href="首页.html" class="bar-menu menu-left">
+                    <i class="icon icon-arrow-left"></i>
+                </a>
+                <a href="#" class="bar-menu menu-right">
+                </a>
+                <div class="bar-center">
+                    <h1>登录</h1>
+                </div>
+            </header>
+            <div class="content">
+                <section class="content-logo">
+                    <img src="../assets/img/logo.png" class="logo">
+                </section>
+                <section class="content-wrap content-login-box">
+                    <div class="content-inner">
+                        <div class="content-type-info">
+                            <ul>
+                                <li>
+                                    <div class="type-info-wrap">
+                                        <div class="type-info-title">手机/邮箱</div>
+                                        <div class="type-info-input">
+                                            <input type="text" name="userName" id="userName" placeholder="请输入手机号或邮箱">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="type-info-wrap">
+                                        <div class="type-info-title">密码</div>
+                                        <div class="type-info-input">
+                                            <input type="password" name="password" id="password" placeholder="请输入密码">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="type-info-wrap">
+                                        <div class="type-info-title">验证码</div>
+                                        <div class="type-info-input">
+                                            <input type="text" name="authCode" id="authCode" placeholder="请输入验证码">
+                                        </div>
+                                        <div class="type-info-code">
+                                            <img src="../assets/img/auth-code.png">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content-operation">
+                        <div class="btn" onclick="window.location.href='首页.html'">登录</div>
+                        <div class="login-link">
+                            <a href="忘记密码.html"><i class="icon icon-lock"></i> 忘记密码?</a>
+                            <a href="注册.html"><i class="icon icon-mobile"></i> 快速注册</a>
+                        </div>
+                    </div>
+                    <div class="content-split-title">
+                        <span class="split-line"></span>
+                        <span class="split-title">其他方式登录</span>
+                        <span class="split-line"></span>
+                    </div>
+                    <div class="quick-login">
+                        <a class="qq"><i class="icon icon-blue icon-qq"></i><p>QQ</p></a>
+                        <a class="weixin"><i class="icon icon-green-dark icon-weixin"></i><p>微信</p></a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../assets/js/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/tjhjs.min.js"></script>
+<script type="text/javascript" src="../assets/js/initjs.js"></script>
+</html>
