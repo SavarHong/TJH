@@ -182,6 +182,15 @@
     .content-title{
         border-bottom: 1px solid #e6e6e6;
     }
+    .content-type-description{
+        padding: rem-calc(45 30);
+        p{
+            font-size: rem-calc(24);
+        }
+        .photo{
+            margin-top: rem-calc(15);
+        }
+    }
 }
 .content-info-box{
     padding: rem-calc(0 15);
@@ -1583,4 +1592,65 @@
 .reg-notice-text{
     font-size: rem-calc(24);
     padding: rem-calc(20);
+}
+//活动秀详情页
+.activity-show-banner{
+    position: relative;
+    height: rem-calc(425);
+    overflow: hidden;
+    & > img{
+        -webkit-filter: blur(10px);
+        -moz-filter: blur(10px);
+        -ms-filter: blur(10px);
+        filter: blur(10px);
+    }
+    .activity-show-header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding-top: rem-calc(120);
+        height: 100%;
+        background: rgba(0,0,0,.3);
+        .activity-show-wrap{
+            @include flexbox();
+        }
+        .video{
+            width: rem-calc(275);
+            height: rem-calc(275);
+            overflow: hidden;
+            margin-left: rem-calc(30);
+        }
+        .info{
+            -webkit-flex: 1;
+            -moz-flex: 1;
+            flex: 1;
+            font-size: rem-calc(22);
+            color: #fff;
+            padding: rem-calc(5 0 0 25);
+            .info-title{
+                font-size: rem-calc(30);
+                padding-right: rem-calc(30);
+                border-bottom: 1px solid #fff;
+                height: rem-calc(161);
+                overflow: hidden;
+            }
+            .info-user{
+                font-size: rem-calc(24);
+                padding-top: rem-calc(15);
+                .info-avatar{
+                    width: rem-calc(36);
+                    height: rem-calc(36);
+                    border-radius: 50%;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: rem-calc(6);
+                    overflow: hidden;
+                }
+                & + p{
+                    padding-top: rem-calc(10);
+                }
+            }
+        }
+    }
 }

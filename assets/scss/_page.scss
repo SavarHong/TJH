@@ -41,6 +41,9 @@
 .bar-footer ~ .content{
     bottom: rem-calc(98);
 }
+.bar-activity-show ~ .content{
+    top: 0;
+}
 
 /* 顶部导航 */
 .bar{
@@ -130,6 +133,14 @@
         height: rem-calc(98);
         border-top: rem-calc(2) solid #e5e5e5;
         background: #f8f8f8;
+    }
+    &.bar-activity-show{
+        background: none;
+        border: 0;
+        .bar-menu,
+        .bar-center h1{
+            color: #efeff4;
+        }
     }
 }
 .bar-tab{
