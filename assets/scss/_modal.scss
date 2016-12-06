@@ -226,7 +226,42 @@
         background-color: #158655;
     }
 }
-
+.actions-review-header{
+    .review-header{
+        @include flexbox();
+        -webkit-align-items:center;
+        -moz-align-items:center;
+        align-items:center;
+    }
+    button{
+        font-size: rem-calc(30);
+        color: $color-primary;
+        &.btn-cancel{
+            padding-left: rem-calc(25);
+        }
+        &.btn-review{
+            padding-right: rem-calc(25);
+        }
+    }
+    span{
+        -webkit-flex: 1;
+        -moz-flex: 1;
+        flex: 1;
+    }
+}
+.actions-review-content{
+    background-color: #fff;
+    padding: rem-calc(15);
+    height: rem-calc(260);
+    textarea{
+        width: 100%;
+        height: 100%;
+        background-color: #f3f5f7;
+        border: 0;
+        padding: rem-calc(10);
+        font-size: rem-calc(26);
+    }
+}
 // Picker Modal
 .picker-modal {
     position: absolute;

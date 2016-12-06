@@ -4888,12 +4888,13 @@ Framework7 Swiper Additions
 
 
     }
-    $(document).on('click', ' .modal-overlay, .popup-overlay, .close-popup, .open-popup, .open-popover,  .close-picker', handleClicks);
+    $(document).on('click', ' .modal-overlay, .popup-overlay, .close-popup, .open-popup, .open-popover,  .close-picker', 'close-actions', handleClicks);
     var defaults =  $.modal.prototype.defaults  = {
         modalButtonOk: '确定',
         modalButtonCancel: '取消',
         modalPreloaderTitle: '加载中',
-        modalContainer : document.body
+        modalContainer : document.body,
+        actionsCloseByOutside: true
     };
 }(Zepto);
 
@@ -5494,6 +5495,13 @@ Framework7 Swiper Additions
 
       return p;
   };
+
+  $(document).on("click", ".close-actions", function() {
+    var actionsToClose = $('.actions-modal.modal-in');
+    if (actionsToClose.length > 0) {
+      $.closeModal(actionsToClose);
+    }
+  });
 
   $(document).on("click", ".close-picker", function() {
     var pickerToClose = $('.picker-modal.modal-in');

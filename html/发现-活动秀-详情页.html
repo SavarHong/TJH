@@ -18,7 +18,7 @@
     <div class="page-wrap">
         <div class="page">
             <header class="bar bar-nav bar-activity-show">
-                <a href="#" class="bar-menu menu-left back">
+                <a href="发现.html#tab2" class="bar-menu menu-left">
                     <i class="icon icon-arrow-left"></i>
                 </a>
                 <a href="#" class="bar-menu menu-right">
@@ -27,6 +27,22 @@
                     <h1>详情</h1>
                 </div>
             </header>
+            <div class="bar bar-footer">
+                <div class="footer-menu activity-show-menu">
+                    <a href="javascript:;" class="like click-status">
+                        <i class="icon icon-favorite-hollow"></i> 赞
+                    </a>
+                    <a href="javascript:;" class="review click-status actions-review">
+                        <i class="icon icon-message"></i> 评论
+                    </a>
+                    <a href="javascript:;" class="collect click-status">
+                        <i class="icon icon-follow-hollow"></i> 收藏
+                    </a>
+                    <a href="产品详情.html" class="more click-status">
+                        相关产品
+                    </a>
+                </div>
+            </div>
             <div class="content">
                 <section class="content-banner activity-show-banner">
                     <img src="../assets/img/banner/activity-show-banner.jpg" class="img-all">
@@ -68,13 +84,72 @@
                 <section class="content-wrap">
                     <h5 class="content-type-title color-text">已有33条评论</h5>
                     <div class="content-inner">
-                        <div class="content-type-description">
-                            <p>
-                                川藏线在5条进藏公路中以里程最长，沿途跨越众多高山大河，一路上景观千变万化：有高山峡谷，有一望无际的草原，有雪山草甸。
-                            </p>
-                            <div class="photo">
-                                <img src="../assets/img/product/product-img1.jpg" class="img-all">
-                            </div>
+                        <div class="content-review-list">
+                            <ul>
+                                <li class="review-item">
+                                    <div class="review-header">
+                                        <span class="review-user">
+                                            <span class="review-avatar">
+                                                <img src="../assets/img/avatar-default.png" class="img-all">
+                                            </span>
+                                            13003928163
+                                        </span>
+                                        1#
+                                    </div>
+                                    <div class="review-main">
+                                        就餐环境非常好，上菜速度快，胃口大开呀，因为菜色都很好，海鲜非常新鲜，价格又合理，推荐一下。
+                                    </div>
+                                    <div class="review-footer">
+                                        <span class="review-date">发表于：2016-12-25 00:00</span>
+                                        <a data-user="13003928163" href="javascript:;" class="review-reply actions-review">
+                                            <i class="icon icon-message"></i>
+                                            回复
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="review-item">
+                                    <div class="review-header">
+                                        <span class="review-user">
+                                            <span class="review-avatar">
+                                                <img src="../assets/img/avatar-default.png" class="img-all">
+                                            </span>
+                                            You King <span class="color-primary">回复130003928163</span>
+                                        </span>
+                                        2#
+                                    </div>
+                                    <div class="review-main">
+                                        服饰很有设计感，有自己的风格，但是可能是我年龄大了的缘故不太喜好这种。不过还是挺棒哒！
+                                    </div>
+                                    <div class="review-footer">
+                                        <span class="review-date">发表于：2016-12-25 00:00</span>
+                                        <a data-user="You King" href="javascript:;" class="review-reply actions-review">
+                                            <i class="icon icon-message"></i>
+                                            回复
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="review-item">
+                                    <div class="review-header">
+                                        <span class="review-user">
+                                            <span class="review-avatar">
+                                                <img src="../assets/img/avatar-default.png" class="img-all">
+                                            </span>
+                                            齐天大圣
+                                        </span>
+                                        3#
+                                    </div>
+                                    <div class="review-main">
+                                        看着楼主的头像，以为是我网络有问题，刷新了几遍，恩，原来是被坑了。
+                                    </div>
+                                    <div class="review-footer">
+                                        <span class="review-date">发表于：2016-12-25 00:00</span>
+                                        <a data-user="齐天大圣" href="javascript:;" class="review-reply actions-review">
+                                            <i class="icon icon-message"></i>
+                                            回复
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </section>
@@ -85,4 +160,51 @@
 <script type="text/javascript" src="../assets/js/zepto.min.js"></script>
 <script type="text/javascript" src="../assets/js/tjhjs.min.js"></script>
 <script type="text/javascript" src="../assets/js/initjs.js"></script>
+<script type="text/javascript">
+    $(document).on('click', '.activity-show-menu a', function () {
+        if($(this).hasClass("like")){
+            if($(this).find("i").hasClass("icon-favorite-hollow")){
+                $(this).find("i").attr("class", "icon icon-favorite");
+            }
+            else{
+                $(this).find("i").attr("class", "icon icon-favorite-hollow");
+            }
+        }
+        else if($(this).hasClass("collect")){
+            if($(this).find("i").hasClass("icon-follow-hollow")){
+                $(this).find("i").attr("class", "icon icon-follow");
+            }
+            else{
+                $(this).find("i").attr("class", "icon icon-follow-hollow");
+            }
+        }
+    });
+    $(document).on('click', '.actions-review', function () {
+        var placeholderText = "请发表您的评论";
+        if($(this).hasClass("review-reply")){
+            var user = $(this).attr("data-user");
+            placeholderText = "回复" + user + "：";
+        }
+        var reviewHeader = "<div class='review-header'>"
+                                        + "<button class='close-actions btn-cancel'>取消</button><span>评论</span><button class='close-actions btn-review'>发表</button>"
+                                    + "</div>";
+        var reviewContent = "<textarea name='review-text' id='review-text' placeholder='"
+                                        + placeholderText
+                                    + "'></textarea>";
+        var buttons = [
+            {
+                text: reviewHeader,
+                label: true,
+                extend: 'review-header'
+            },
+            {
+                text: reviewContent,
+                label: true,
+                extend: 'review-content'
+            }
+        ];
+        var groups = [buttons];
+        $.actions(groups);
+    });
+</script>
 </html>

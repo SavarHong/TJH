@@ -249,6 +249,38 @@
             color: #fff;
         }
     }
+    &.activity-show-menu{
+        -webkit-align-items:center;
+        -moz-align-items:center;
+        align-items:center;
+        height: 100%;
+        a{
+            padding-top: 0;
+            font-size: rem-calc(24);
+            line-height: rem-calc(24);
+            &:hover,
+            &:active{
+                color: $body-font-color;
+            }
+            .icon{
+                display: inline-block;
+                vertical-align: middle;
+                width: auto;
+                font-size: rem-calc(24);
+                color: $color-text-gray;
+            }
+            &.like.status-active{
+                .icon{
+                    color: $color-danger;
+                }
+            }
+            &.collect.status-active{
+                .icon{
+                    color: $color-yellow;
+                }
+            }
+        }
+    }
 }
 .footer-tip{
     align-items:center;
