@@ -6710,59 +6710,71 @@ Framework7 Swiper Additions
 + function($) {
     'use strict';
 
-    $.waterFall = function (data) {
-        var waterFallContent = $('.waterfall-scroll');
-        var column = [$('#col1'), $('#col2')];
-        var appendData = data;
-        var w = this;
+    var waterFall = {
+        container: $("waterfall-container"),
+        columnNumber: 1,
+        columnWidth: 210,
+        // P_001.jpg ~ P_160.jpg
+        rootImage: "http://cued.xunlei.com/demos/publ/img/",
+        indexImage: 0,
+        scrollTop: $content.scrollTop(),
+        detectLeft: 0,
+        loadFinish: false,
 
-        w.getRowByHeight = function () {
-            var height = [];
-            for (var i = 0; column[i]; i++) {
-              column[i].height = column[i].height();
-              height.push(column[i]);
+        // 返回固定格式的图片名
+        getIndex: function() {
+            var index = this.indexImage;
+            if (index < 10) {
+                index = "00" + index;
+            } else if (index < 100) {
+                index = "0" + index;
             }
-            // 对高度进行排序，低--》高,保证最矮的优先加载
-            height.sort(function (a, b) {
-              return a.height - b.height;
-            });
-            return height;
-        };
-        w.createHtml = function (imageUrl, appSchemaUrl) {
-            var strHtml = '<img class="waterfall-img lazy" src="" data-src="' + imageUrl + '" alt="" >';
-            var div = document.createElement('div');
-            div.className = 'cell-item need-check has-link';
-            div.innerHTML = strHtml;
-            div.setAttribute("data-src", appSchemaUrl);
-            return div;
-        };
+            return index;
+        },
 
-        w.lazyLoadImg = function () {
-            var unloadedpic = waterFallContent.find(".waterfall-img").not(".lazy-loaded");
-            unloadedpic.trigger('lazy');
-        };
-
-        w.init = function () {
-            var rows = w.getRowByHeight(), div, k;
-            for (var i = 0; appendData[i]; i++) {
-              div = w.createHtml(data[i].imageUrl, data[i].appSchemaUrl);
-              // 因为是4列，所以数据以4列一个轮回加载，改成2列
-              k = ((i + 1) > 2) ? i % 2 : i;
-              // 在列上添加数据
-              rows[k].append(div);
-              w.lazyLoadImg();
+        // 是否滚动载入的检测
+        appendDetect: function() {
+            var start = 0;
+            for (start; start < this.columnNumber; start++) {
+                var eleColumn = $("#waterFallColumn_" + start);
+                if (eleColumn && !this.loadFinish) {
+                    if (eleColumn.offsetTop + eleColumn.clientHeight < this.scrollTop + (window.innerHeight || document.documentElement.clientHeight)) {
+                        this.append(eleColumn);
+                    }
+                }
             }
-        };
 
-        w.init();
-    }
-    $.initWaterFallScroll = function (pageContainer) {
-        pageContainer = $(pageContainer);
-        var waterFallContent = pageContainer.find('.waterfall-scroll');
-        if (waterFallContent.length === 0) return;
-        $.waterFall(waterFallContent);
-        $.attachInfiniteScroll(waterFallContent);
-    };
+            return this;
+        },
+
+    // 滚动载入
+    append: function(column) {
+        this.indexImage += 1;
+        var html = '', index = this.getIndex(), imgUrl = this.rootImage + "P_" + index + ".jpg";
+        var splitHtml = "<div class='content-split-title'>"
+                                + "<span class='split-line'></span>"
+                                + "<span class='split-title'>我是有底线的</span>"
+                                + "<span class='split-line'></span>"
+                            + "</div>";
+
+        // 图片尺寸
+        var aEle = $("a");
+        aEle.href = "###";
+        aEle.className = "waterfall-item";
+        aEle.innerHTML = '<img src="'+ imgUrl +'" /><strong>'+ index +'</strong>';
+        column.appendChild(aEle);
+
+        if (index >= 160) {
+            this.loadFinish = true;
+            if($(".infinite-scroll-preloader").length > 0){
+                $(".infinite-scroll-preloader").html(splitHtml);
+            }
+        }
+
+        return this;
+    },
+};
+
 }(Zepto);
 
 /* ===============================================================================
