@@ -1715,3 +1715,27 @@
         }
     }
 }
+/* waterfall */
+.waterfall-container{
+    padding: rem-calc(15);
+    .column{
+        float: left;
+    }
+    .waterfall-item{
+        padding: rem-calc(15);
+        display: block;
+        overflow: hidden;
+        font-size: 0;
+        .info{
+            @include flexbox();
+            -webkit-align-items:center;
+            -moz-align-items:center;
+            align-items:center;
+            min-height: rem-calc(54);
+            padding-left: rem-calc(20);
+            font-size: rem-calc(24);
+            color: $color-title;
+            background-color: #f3f5f7;
+        }
+    }
+}
