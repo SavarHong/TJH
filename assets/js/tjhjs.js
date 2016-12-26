@@ -6720,7 +6720,7 @@ Framework7 Swiper Additions
         detectLeft: 0,
         loadFinish: false,
         body: $(".content"),
-        maxImgCount: 30,
+        maxImgCount: 30, //$("#waterfall-tpl").children().length
 
         // 返回固定格式的图片名
         getIndex: function() {
@@ -6762,7 +6762,7 @@ Framework7 Swiper Additions
         var aEle = document.createElement("a");
         aEle.href = "发现-活动秀-详情页.html";
         aEle.className = "waterfall-item";
-        aEle.innerHTML = '<img src="'+ imgUrl +'" class="img-all" /><p class="info">'+ index +'</p>';
+        aEle.innerHTML = '<img src="'+ imgUrl +'" class="img-all" /><p class="info"><span class="info-avatar"><img src="../assets/img/avatar-default-colours.png" class="img-all"></span> 城市丛林</p></a>';
         column.appendChild(aEle);
 
         if (index >= this.maxImgCount) {
@@ -6787,7 +6787,8 @@ Framework7 Swiper Additions
                     for (i=0; i<5; i+=1) {
                         self.indexImage = start + self.columnNumber * i;
                         var index = self.getIndex();
-                        html = html + '<a href="发现-活动秀-详情页.html" class="waterfall-item"><img class="img-all" src="'+ self.rootImage + "activity-show-product" + index +'.jpg" /><p class="info">'+ index +'</p></a>';
+                        //html = html + $("#waterfall-tpl").html();
+                        html = html + '<a href="发现-活动秀-详情页.html" class="waterfall-item"><img class="img-all" src="'+ self.rootImage + "activity-show-product" + index +'.jpg" /><p class="info"><span class="info-avatar"><img src="../assets/img/avatar-default-colours.png" class="img-all"></span> 城市丛林</p></a>';
                     }
                     return html;
                 }() +
