@@ -213,7 +213,8 @@ $(function () {
                 $("[data-tab]").find("a").removeClass("active");
                 $("[data-tab]").find("a[href='" + hash + "']").addClass("active");
                 $(hash).siblings().removeClass("active");
-                $(hash).addClass("active")
+                $(hash).addClass("active");
+                $.initWaterFallScroll();
             }
 
         }

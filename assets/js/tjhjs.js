@@ -6640,6 +6640,7 @@ Framework7 Swiper Additions
     e.preventDefault();
     var clicked = $(this);
     showTab(clicked.data("tab") || clicked.attr('href'), clicked);
+    $.initWaterFallScroll();
   });
 }(Zepto);
 
@@ -6894,7 +6895,7 @@ Framework7 Swiper Additions
 };
 
 $.initWaterFallScroll = function() {
-    if(this.container){
+    if($(".waterfall-container").length > 0){
         waterFall.init();
     }
 };
