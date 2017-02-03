@@ -6894,7 +6894,9 @@ Framework7 Swiper Additions
 };
 
 $.initWaterFallScroll = function() {
-    waterFall.init();
+    if(this.container){
+        waterFall.init();
+    }
 };
 }(Zepto);
 
